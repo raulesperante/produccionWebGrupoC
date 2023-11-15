@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Tareas') }}</div>
+                    <div class="card-header">{{ __('Productos') }}</div>
 
                     <div class="card-body">
 
@@ -21,7 +21,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('tareas.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="nombre" class="form-label"> Nombre </label>
@@ -34,7 +34,7 @@
                                     placeholder="Ingrese la descripción de la tarea">{{ old('descripcion') }}</textarea>
                             </div>
                             <button type="submit" class="btn btn-success"> Agregar </button>
-                            <a href="{{ route('tareas.index') }}" class="btn btn-danger"> Cancelar </a>
+                            <a href="{{ route('products.index') }}" class="btn btn-danger"> Cancelar </a>
                         </form>
 
                     </div>

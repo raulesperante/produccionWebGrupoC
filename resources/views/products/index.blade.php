@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Tareas') }}</div>
+                    <div class="card-header">{{ __('Productos') }}</div>
 
                     <div class="card-body">
 
@@ -16,9 +16,9 @@
                         @endif
 
                         <div class="mb-3">
-                            <a href="#" class="btn btn-primary"> 
+                            <a href="{{ route('products.create') }}" class="btn btn-primary"> 
                                 <i class="fa-solid fa-plus"></i>
-                                Agregar mascota 
+                                Agregar producto 
                             </a>
                         </div>
 

@@ -24,7 +24,7 @@ class ProductController extends Controller
     {
         //todo
         return view('products.create', [
-            'products' => collect([])
+            'categorias' => collect([])
         ]);
     }
 
@@ -34,6 +34,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        return;
     }
 
     /**
