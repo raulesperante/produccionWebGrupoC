@@ -51,13 +51,7 @@
                                 <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{{ route('tareas.index') }}">Tareas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{{ route('categorias.index') }}">Categorías</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{{ route('mascotas.index') }}">Mascotas</a>
+                                <a class="nav-link" aria-current="page" href="{{ route('products.index') }}">Productos</a>
                             </li>
                             <li class="nav-item border-top">
                                 <a class="nav-link" href="{{ route('logout') }}"

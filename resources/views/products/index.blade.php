@@ -1,6 +1,6 @@
 @extends('layouts.app-admin')
 
-@section('title', 'Lista de tareas')
+@section('title', 'Lista de products')
 
 @section('content')
     <div class="container">
@@ -16,7 +16,7 @@
                         @endif
 
                         <div class="mb-3">
-                            <a href="{{ route('tareas.create') }}" class="btn btn-primary"> 
+                            <a href="#" class="btn btn-primary"> 
                                 <i class="fa-solid fa-plus"></i>
                                 Agregar mascota 
                             </a>
@@ -32,8 +32,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @if ($tareas->count() > 0)
-                                    @foreach ($tareas as $tarea)
+                                @if ($products->count() > 0)
+                                    @foreach ($products as $tarea)
                                         <tr>
                                             <td> {{ $tarea->nombre }} </td>
                                             <td> {{ $tarea->descripcion }} </td>
@@ -45,7 +45,7 @@
                                             <td> 
                                                 <ul>
                                                     <li class="mb-3">
-                                                        <a href="{{ route('tareas.show', $tarea) }}" class="btn btn-primary"> 
+                                                        <a href="{{ route('products.show', $tarea) }}" class="btn btn-primary"> 
                                                             <i class="fa-solid fa-eye"></i>
                                                             Ingresar 
                                                         </a>
@@ -56,13 +56,13 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="5" class="text-center"> No hay tareas creadas </td>
+                                        <td colspan="5" class="text-center"> No hay products creadas </td>
                                     </tr>
                                 @endif
                             </tbody>
                         </table>
 
-                        {{-- $tareas->links() --}}
+                        {{-- $products->links() --}}
 
                     </div>
                 </div>
