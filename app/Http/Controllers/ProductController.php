@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -22,9 +23,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //todo
+        $categories = Category::orderBy('name')->get();
         return view('products.create', [
-            'categories' => collect([])
+            'categories' => $categories
         ]);
     }
 
@@ -33,8 +34,33 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        return;
+        $request->validate([
+            'name' => 'required|max:70',
+            'description' => 'required',
+            'category_id' => 'required',
+            'price' => 'required',
+            'amount' => 'required',
+            'image' => 'required|mimes:jpg,png'
+        ], [
+            'nombre.required' => 'El nombre de la mascota es obligatorio'
+        ]);
+
+        $image_name = time() . '_' . $request->file('image')->getClientOriginalName();
+
+        $image = $request->file('image')->storeAs('products', $image_name, 'public');
+
+        Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'category_id' => $request->category_id,
+            'price' => $request->price,
+            'amount' => $request->amount,
+            'image' => $image
+        ]);
+
+        return redirect()
+            ->route('products.index')
+            ->with('status', 'El producto se ha agregado correctamente');
     }
 
     /**

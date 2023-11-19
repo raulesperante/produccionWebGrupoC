@@ -35,12 +35,12 @@
                             </div>
                             <div class="mb-3">
                                 <label for="price" class="form-label"> Precio </label>
-                                <input type="text" class="form-control" id="price" name="price"
+                                <input type="number" step="0.1" class="form-control" id="price" name="price"
                                     placeholder="Ingrese el precio del producto" value="{{ old('price') }}">
                             </div>
                             <div class="mb-3">
-                                <label for="amount" class="form-label"> Precio </label>
-                                <input type="text" class="form-control" id="amount" name="amount"
+                                <label for="amount" class="form-label"> Cantidad </label>
+                                <input type="number" class="form-control" id="amount" name="amount"
                                     placeholder="Ingrese la cantidad producto" value="{{ old('amount') }}">
                             </div>
                             <div class="mb-3">
@@ -48,11 +48,11 @@
                                 <input type="file" class="form-control" id="image" name="image">
                             </div>
                             <div class="mb-3">
-                                <label for="categoria_id" class="form-label"> Categoría </label>
-                                <select class="form-control" name="categoria_id" id="categoria_id">
+                                <label for="category_id" class="form-label"> Categoría </label>
+                                <select class="form-control" name="category_id" id="category_id">
                                     <option value=""> Por favor seleccione la categoría del producto </option>
                                     @foreach ($categories as $cat)
-                                        <option @selected( old('categoria_id') == $cat->id ) value="{{ $cat->id }}"> {{ $cat->name }} </option>
+                                        <option @selected( old('category_id') == $cat->id ) value="{{ $cat->id }}"> {{ $cat->name }} </option>
                                     @endforeach
                                 </select>
                             </div>
