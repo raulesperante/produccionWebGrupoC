@@ -24,7 +24,7 @@ class ProductController extends Controller
     {
         //todo
         return view('products.create', [
-            'categorias' => collect([])
+            'categories' => collect([])
         ]);
     }
 

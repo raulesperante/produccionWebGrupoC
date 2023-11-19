@@ -43,6 +43,19 @@
                                 <input type="text" class="form-control" id="amount" name="amount"
                                     placeholder="Ingrese la cantidad producto" value="{{ old('amount') }}">
                             </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label"> Imagen </label>
+                                <input type="file" class="form-control" id="image" name="image">
+                            </div>
+                            <div class="mb-3">
+                                <label for="categoria_id" class="form-label"> Categoría </label>
+                                <select class="form-control" name="categoria_id" id="categoria_id">
+                                    <option value=""> Por favor seleccione la categoría del producto </option>
+                                    @foreach ($categories as $cat)
+                                        <option @selected( old('categoria_id') == $cat->id ) value="{{ $cat->id }}"> {{ $cat->name }} </option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <button type="submit" class="btn btn-success"> Agregar </button>
                             <a href="{{ route('products.index') }}" class="btn btn-danger"> Cancelar </a>
                         </form>
