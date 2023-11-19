@@ -38,6 +38,11 @@
                                 <input type="text" class="form-control" id="price" name="price"
                                     placeholder="Ingrese el precio del producto" value="{{ old('price') }}">
                             </div>
+                            <div class="mb-3">
+                                <label for="amount" class="form-label"> Precio </label>
+                                <input type="text" class="form-control" id="amount" name="amount"
+                                    placeholder="Ingrese la cantidad producto" value="{{ old('amount') }}">
+                            </div>
                             <button type="submit" class="btn btn-success"> Agregar </button>
                             <a href="{{ route('products.index') }}" class="btn btn-danger"> Cancelar </a>
                         </form>
