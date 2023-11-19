@@ -27,25 +27,24 @@
                                 <tr>
                                     <th> Nombre </th>
                                     <th> Descripción </th>
-                                    <th> Resuelta </th>
+                                    <th> Precio </th>
+                                    <th> Cantidad </th>
                                     <th> Acciones </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @if ($products->count() > 0)
-                                    @foreach ($products as $tarea)
+                                    @foreach ($products as $product)
                                         <tr>
-                                            <td> {{ $tarea->nombre }} </td>
-                                            <td> {{ $tarea->descripcion }} </td>
-                                            @if($tarea->resuelta == 0)
-                                                <td>NO</td>
-                                            @else
-                                                <td>SI</td>
-                                            @endif
+                                            <td> {{ $product->name }} </td>
+                                            <td> {{ $product->description }} </td>
+                                            <td> {{ $product->price }} </td>
+                                            <td> {{ $product->amount }} </td>
                                             <td> 
                                                 <ul>
                                                     <li class="mb-3">
-                                                        <a href="{{ route('products.show', $tarea) }}" class="btn btn-primary"> 
+                                                        <!-- La ruta debe ser products.show -->
+                                                        <a href="{{ route('products.index', $product) }}" class="btn btn-primary"> 
                                                             <i class="fa-solid fa-eye"></i>
                                                             Ingresar 
                                                         </a>
@@ -56,13 +55,13 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="5" class="text-center"> No hay products creadas </td>
+                                        <td colspan="5" class="text-center"> No hay productos creados </td>
                                     </tr>
                                 @endif
                             </tbody>
                         </table>
 
-                        {{-- $products->links() --}}
+                        {{ $products->links() }}
 
                     </div>
                 </div>
