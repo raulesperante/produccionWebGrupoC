@@ -1,6 +1,6 @@
 @extends('layouts.app-admin')
 
-@section('title', 'Tarea nueva')
+@section('title', 'Nuevo producto')
 
 @section('content')
     <div class="container">
@@ -24,14 +24,19 @@
                         <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
-                                <label for="nombre" class="form-label"> Nombre </label>
-                                <input type="text" class="form-control" id="nombre" name="nombre"
-                                    placeholder="Ingrese el nombre de la tarea" value="{{ old('nombre') }}">
+                                <label for="name" class="form-label"> Nombre </label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    placeholder="Ingrese el nombre del producto" value="{{ old('name') }}">
                             </div>
                             <div class="mb-3">
-                                <label for="descripcion" class="form-label"> Descripción </label>
-                                <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="10"
-                                    placeholder="Ingrese la descripción de la tarea">{{ old('descripcion') }}</textarea>
+                                <label for="description" class="form-label"> Descripción </label>
+                                <textarea class="form-control" name="description" id="description" cols="30" rows="3"
+                                    placeholder="Ingrese la descripción del producto">{{ old('description') }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label"> Precio </label>
+                                <input type="text" class="form-control" id="price" name="price"
+                                    placeholder="Ingrese el precio del producto" value="{{ old('price') }}">
                             </div>
                             <button type="submit" class="btn btn-success"> Agregar </button>
                             <a href="{{ route('products.index') }}" class="btn btn-danger"> Cancelar </a>
