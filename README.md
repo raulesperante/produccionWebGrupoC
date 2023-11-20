@@ -15,4 +15,8 @@
     <li>Backend: php artisan serve</li>
     <li>Frontend: npm run dev</li>
 </ul>
+<h2>Importante</h2>
+<div>Recordar configurar en el .env el nombre de la base de datos (a elección)</div>
+<div>Ejecutar las migraciones:</div>
+<div>php artisan migrate</div>
 
