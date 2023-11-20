@@ -130,6 +130,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->update([
+            'is_visible' => false
+        ]);
+        return redirect()
+            ->route('products.index')
+            ->with('status', 'El producto se ha eliminado correctamente');
     }
 }

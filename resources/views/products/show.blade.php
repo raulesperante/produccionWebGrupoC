@@ -26,7 +26,7 @@
     </div>
 
     @vite([
-        'resources/js/admin/submit_eliminar_mascota.js', 
+        'resources/js/admin/submit_delete_record.js', 
     ]);
 
 @endsection
