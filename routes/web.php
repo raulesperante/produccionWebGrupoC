@@ -14,17 +14,14 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
+Route::get('/', [ProductController::class, "index"])->name('products.index');
 Route::get('/productos', [ProductController::class, "index"])->name('products.index');
 Route::get('/productos/crear', [ProductController::class, "create"])->name('products.create');
 Route::post('/productos/crear', [ProductController::class, "store"])->name('products.store');
 Route::get('/productos/{product}', [ProductController::class, "show"])->name('products.show');
-Route::get('/productos/editar', [ProductController::class, "edit"])->name('products.edit');
-Route::get('/productos/eliminar', [ProductController::class, "destroy"])->name('products.destroy');
+Route::get('/productos/editar/{product}', [ProductController::class, "edit"])->name('products.edit');
+Route::delete('/productos/eliminar/{product}', [ProductController::class, "destroy"])->name('products.destroy');
+Route::post('/productos/actualizar/{product}', [ProductController::class, "update"])->name('products.update');
 
 
 
