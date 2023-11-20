@@ -43,8 +43,7 @@
                                             <td> 
                                                 <ul>
                                                     <li class="mb-3">
-                                                        <!-- La ruta debe ser products.show -->
-                                                        <a href="{{ route('products.index', $product) }}" class="btn btn-primary"> 
+                                                        <a href="{{ route('products.show', $product) }}" class="btn btn-primary"> 
                                                             <i class="fa-solid fa-eye"></i>
                                                             Ingresar 
                                                         </a>

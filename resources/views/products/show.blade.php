@@ -1,20 +1,20 @@
 @extends('layouts.app-admin')
 
-@section('title', $tarea->nombre)
+@section('title', $product->nombre)
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ $tarea->nombre }}</div>
+                    <div class="card-header">{{ $product->name }}</div>
                     <div class="card-body" style="min-height: 500px">
-                        {{ $tarea->descripcion }}
+                        {{ $product->description }}
                     </div>
                     <div class="card-footer">
-                        <a href="{{ route('tareas.index') }}" class="btn btn-primary"> Volver a tareas </a>
-                        <a href="{{ route('tareas.edit', $tarea) }}" class="btn btn-success"> Editar </a>
-                        <form action="{{ route('tareas.destroy', $tarea) }}" method="POST" class="d-inline">
+                        <a href="{{ route('products.index') }}" class="btn btn-primary"> Volver a products </a>
+                        <a href="{{ route('products.edit', $product) }}" class="btn btn-success"> Editar </a>
+                        <form action="{{ route('products.destroy', $product) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button id="btn_eliminar_mascota" type="submit" class="btn btn-danger"> Eliminar </button>
