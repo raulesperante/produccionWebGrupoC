@@ -21,7 +21,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('products.update', $product) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label"> Nombre </label>
@@ -62,7 +62,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-success"> Agregar </button>
+                            <button type="submit" class="btn btn-success"> Actualizar </button>
                             <a href="{{ route('products.index') }}" class="btn btn-danger"> Cancelar </a>
                         </form>
 

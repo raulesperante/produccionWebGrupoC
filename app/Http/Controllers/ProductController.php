@@ -44,7 +44,7 @@ class ProductController extends Controller
             'amount' => 'required',
             'image' => 'required|mimes:jpg,png'
         ], [
-            'nombre.required' => 'El nombre de la mascota es obligatorio'
+            'nombre.required' => 'El nombre del producto es obligatorio'
         ]);
 
         $image_name = time() . '_' . $request->file('image')->getClientOriginalName();
@@ -87,12 +87,43 @@ class ProductController extends Controller
         ]);
     }
 
+    private function getImage(Request $request, Product $product){
+        if($request->image){
+            $image_name = time() . '_' . $request->file('image')->getClientOriginalName();
+            $image = $request->file('image')->storeAs('products', $image_name, 'public');
+            return $image;
+        }
+        return $product->image;
+    }
+
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, Product $product)
     {
-        //
+        //dd($request->image);
+        $request->validate([
+            'name' => 'required|max:70',
+            'description' => 'required',
+            'category_id' => 'required',
+            'price' => 'required',
+            'amount' => 'required',
+            'image' => 'mimes:jpg,png'
+        ], [
+            'nombre.required' => 'El nombre del producto es obligatorio'
+        ]);
+
+        $product->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'category_id' => $request->category_id,
+            'price' => $request->price,
+            'amount' => $request->amount,
+            'image' => $this->getImage($request, $product),
+        ]);
+        return redirect()
+            ->route('products.index')
+            ->with('status', 'El producto se ha modificado correctamente');
     }
 
     /**
