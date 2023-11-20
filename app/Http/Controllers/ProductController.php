@@ -101,7 +101,6 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //dd($request->image);
         $request->validate([
             'name' => 'required|max:70',
             'description' => 'required',
