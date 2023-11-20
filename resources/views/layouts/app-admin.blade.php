@@ -77,6 +77,34 @@
 
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
+    <script>
+import Swal from "sweetalert2";
+
+const delete_record = document.getElementById("delete_record");
+
+
+
+
+delete_record.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    Swal.fire({
+        title: '¿Está segura/o que desea eliminar este registro?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            delete_record.form.submit();
+        }
+    })
+
+    </script>
+
 </body>
 
 </html>

@@ -23,7 +23,7 @@ Route::get('/productos/crear', [ProductController::class, "create"])->name('prod
 Route::post('/productos/crear', [ProductController::class, "store"])->name('products.store');
 Route::get('/productos/{product}', [ProductController::class, "show"])->name('products.show');
 Route::get('/productos/editar', [ProductController::class, "edit"])->name('products.edit');
-Route::get('/productos/eliminar', [ProductController::class, "destroy"])->name('products.destroy');
+Route::post('/productos/eliminar', [ProductController::class, "destroy"])->name('products.destroy');
 
 
 
