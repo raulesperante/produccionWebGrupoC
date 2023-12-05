@@ -1,6 +1,6 @@
 @extends('layouts.app-admin')
 
-@section('title', $product->nombre)
+@section('title', $product->name)
 
 @section('content')
     <div class="container">
@@ -12,12 +12,12 @@
                         {{ $product->description }}
                     </div>
                     <div class="card-footer">
-                        <a href="{{ route('products.index') }}" class="btn btn-primary"> Volver a products </a>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary"> Volver a productos </a>
                         <a href="{{ route('products.edit', $product) }}" class="btn btn-success"> Editar </a>
                         <form action="{{ route('products.destroy', $product) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button id="btn_eliminar_mascota" type="submit" class="btn btn-danger"> Eliminar </button>
+                            <button id="delete_record" type="submit" class="btn btn-danger"> Eliminar </button>
                         </form>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
     </div>
 
     @vite([
-        'resources/js/admin/submit_eliminar_mascota.js', 
+        'resources/js/admin/submit_delete_record.js', 
     ]);
 
 @endsection
