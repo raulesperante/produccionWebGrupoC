@@ -17,7 +17,11 @@
     <!-- Scripts -->
     @vite([
         'resources/css/galeriaSpirit.css',
+        'resources/css/galeriaFlash.css',
         'resources/css/bootstrap.css',
+        'resources/css/contacto.css',
+        
+
 
     ])
 
@@ -37,7 +41,6 @@
         <li><a href="mailto:uosugata@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>
         <li><a href="https://www.instagram.com/uosugata/" target="_blank"><i class="fa fa-instagram"></i></a></li>
         <li><a href="https://www.facebook.com/Uosugata" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="https://www.google.com/webhp?hl=es&sa=X&ved=0ahUKEwi9m8yWlrT7AhU6qZUCHa0aCSYQPAgI" target="_blank"><i class="fa fa-google-plus"></i></a></li>
         <li><a href="#"><i class="fa fa-youtube"></i></a></li>
         <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
       </ul>

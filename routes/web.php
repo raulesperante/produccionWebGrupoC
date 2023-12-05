@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\FlashbackController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -22,9 +25,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('users/{id}', function ($id) {
-    
-});
+
 
 Route::controller(ProductController::class)->group(function(){
     Route::get('/productos',"index")->name('products.index');
@@ -39,6 +40,9 @@ Route::get('/', [HomeController::class, "index"])->name('home.index');
 
 Route::get('/spirit', [SpiritController::class, "index"])->name('spirit.index');
 
+Route::get('/flashback', [FlashbackController::class, "index"])->name('flashback.index');
+
+Route::get('/contacto', [ContactoController::class, "index"])->name('contacto.index');
 
 //Route::get('/productos', [ProductController::class, "index"])->name('products.index');
 //Route::get('/productos/crear', [ProductController::class, "create"])->name('products.create');
