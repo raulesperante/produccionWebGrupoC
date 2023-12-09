@@ -1,77 +1,98 @@
-@extends('layouts.app')
+@extends('layouts.app-client');
+
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
+    <div class="container w-75 bg-black mt-5 rounded shadow" id="log">
+      <div class="row align-items-stretch">
+        <div
+          class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"
+        ></div>
+        <div class="col p-5 rounded-end">
+          <div class="text-end">
+            <img
+              src="/assets/images/logoprincipal.jpeg"
+              width="200"
+              alt="imagen logo principal"
+            />
+          </div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+          <h2 class="fw-bold text-center pt-5 mb-5">BiEnVeNiDo...!!!</h2>
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+          <!--LOGIN-->
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirmar Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+          <form action="#">
+            <div class="mb-4">
+              <label for="correo" class="form-label">Correo Electronico</label>
+              <input
+                type="email"
+                class="form-control"
+                id="correo"
+                name="correo"
+                required
+              />
             </div>
+            <div class="mb-4">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+            </div>
+            <div class="mb-4 form-check">
+              <label for="conectado" class="form-check-label"
+                >Mantener Conexion Abierta</label
+              >
+              <input
+                type="checkbox"
+                name="conectado"
+                class="form-check-input"
+                id="conectado"
+              />
+            </div>
+            <div class="d-grid" id="ini">
+              <button type="submit" class="btn btn-dark">Iniciar Sesion</button>
+            </div>
+            <div class="my-3">
+              <span>No tienes cuentas? <a href="#">Registrate</a></span
+              ><br />
+              <span><a href="#">Recuperar Contraseña</a></span>
+            </div>
+          </form>
+
+          <!--login con redes sociales-->
+          <div class="container w-100 my-5">
+            <div class="row text-center">
+              <div class="col-12" id="inilog">Iniciar Sesion</div>
+            </div>
+            <div class="row">
+              <div class="col btn btn-outline-primary w-100 my-1">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <i class="fa fa-facebook"></i>
+                  </div>
+                  <div class="col-12 col-md-10 text-center">Facebook</div>
+                </div>
+              </div>
+              <div class="col btn btn-outline-danger w-100 my-1">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <i class="fa fa-google-plus"></i>
+                  </div>
+                  <div class="col-12 col-md-10 text-center">Google</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+
+
+
 @endsection
+  
+
+
