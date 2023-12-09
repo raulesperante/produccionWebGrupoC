@@ -14,15 +14,7 @@
     <link rel="icon" href="/assets/images/logoprincipal.jpeg">
     <script src="https://kit.fontawesome.com/77693d89c5.js" crossorigin="anonymous"></script>
     
-    <style>
-        body{
-            background-image: url("{{asset('/assets/images/fondookspirit.jpg')}}");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-    </style>
+
 
     <!-- Scripts -->
     @vite([
@@ -30,6 +22,8 @@
         'resources/css/galeriaSpirit.css',
 
     ])
+
+    @yield('resources')
 
 </head>
 

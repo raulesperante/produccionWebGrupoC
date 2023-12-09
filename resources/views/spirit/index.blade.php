@@ -1,5 +1,17 @@
 @extends('layouts.app-client');
 
+@section('resources')
+    <style>
+        body{
+            background-image: url("{{asset('/assets/images/fondookspirit.jpg')}}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+@endsection
+
 
 @section('content')
   <section id="galeria1" class="container">
