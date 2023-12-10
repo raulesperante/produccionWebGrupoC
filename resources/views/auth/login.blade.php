@@ -1,73 +1,117 @@
-@extends('layouts.app')
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+@extends('layouts.app-client');
 
+@section('resources')
+    @vite([
 
-<!DOCTYPE html>
-<html>
+        'resources/css/tucuenta.css',
+    ])
+    <style>
+        body{
+            background-image: url("{{asset('/assets/images/fondologin.jpg')}}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-<head>
-    <title>Login Page</title>
-    <!--Made with love by Mutiullah Samim -->
-
-    <!--Bootsrap 4 CDN-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-    <!--Custom styles-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/styles.css') }}">
-</head>
-@section('content')
-<body>
-    <div class="container">
-        <div class="d-flex justify-content-center h-100">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Iniciar Sesion</h3>
-                    <div class="d-flex justify-content-end social_icon">
-                        <span><i class="fab fa-facebook-square"></i></span>
-                        <span><i class="fab fa-twitter-square"></i></span>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <form action="{{ route('login')}}" method="post">
-                        @csrf
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="usuario">
-
-                        </div>
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            @error('password')
-                            <input type="password" class="form-control" placeholder="contraseña">
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Ingresar" class="btn float-right login_btn">
-                        </div>
-                    </form>
-                </div>
-                <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
-                        Don't have an account?<a href="#">Sign Up</a>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a href="#">Forgot your password?</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-
-</html>
+        .bg{
+            background-image: url("{{asset('/assets/images/loginok.webp')}}");
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
 @endsection
+
+@section('content')
+    <div class="container w-75 bg-black mt-5 rounded shadow" id="log">
+      <div class="row align-items-stretch">
+        <div
+          class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"
+        ></div>
+        <div class="col p-5 rounded-end">
+          <div class="text-end">
+            <img
+              src="/assets/images/logoprincipal.jpeg"
+              width="200"
+              alt="imagen logo principal"
+            />
+          </div>
+
+          <h2 class="fw-bold text-center pt-5 mb-5">Registrate!!!</h2>
+
+          <!--LOGIN-->
+
+          <form action="#">
+            <div class="mb-4">
+              <label for="correo" class="form-label">Correo Electronico</label>
+              <input
+                type="email"
+                class="form-control"
+                id="correo"
+                name="correo"
+                required
+              />
+            </div>
+            <div class="mb-4">
+              <label for="password" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+            </div>
+            <div class="mb-4 form-check">
+              <label for="conectado" class="form-check-label"
+                >Mantener Conexion Abierta</label
+              >
+              <input
+                type="checkbox"
+                name="conectado"
+                class="form-check-input"
+                id="conectado"
+              />
+            </div>
+            <div class="d-grid" id="ini">
+              <button type="submit" class="btn btn-dark">Iniciar Sesion</button>
+            </div>
+            <div class="my-3">
+              <span>No tienes cuentas? <a href="#">Registrate</a></span
+              ><br />
+              <span><a href="#">Recuperar Contraseña</a></span>
+            </div>
+          </form>
+
+          <!--login con redes sociales-->
+          <div class="container w-100 my-5">
+            <div class="row text-center">
+              <div class="col-12" id="inilog">Iniciar Sesion</div>
+            </div>
+            <div class="row">
+              <div class="col btn btn-outline-primary w-100 my-1">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <i class="fa fa-facebook"></i>
+                  </div>
+                  <div class="col-12 col-md-10 text-center">Facebook</div>
+                </div>
+              </div>
+              <div class="col btn btn-outline-danger w-100 my-1">
+                <div class="row align-items-center">
+                  <div class="col-2 d-none d-md-block">
+                    <i class="fa fa-google-plus"></i>
+                  </div>
+                  <div class="col-12 col-md-10 text-center">Google</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+@endsection
+  
+
+
