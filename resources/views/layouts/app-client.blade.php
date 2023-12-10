@@ -57,23 +57,23 @@
               <a class="btn btn-dark btn-lg" href="inicio.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-success btn-lg" href="street_flashback.html"
+              <a class="btn btn-success btn-lg" href="{{ route('flashback.index') }}"
                 >Street Flash Back</a
               >
             </li>
             <li class="nav-item">
-              <a class="btn btn-danger btn-lg" href="street_spirit.html"
+              <a class="btn btn-danger btn-lg" href="{{ route('spirit.index') }}"
                 >Street Spirit</a
               >
             </li>
             <li class="nav-item">
               <a class="btn btn-dark btn-lg" href="contacto.html">Contacto</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="btn btn-dark btn-lg" href="./tucuenta.html"
                 >Tu Cuenta</a
               >
-            </li>
+            </li>!-->
           </ul>
           <form class="d-flex" role="search">
             <input

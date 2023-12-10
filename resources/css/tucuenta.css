@@ -1,14 +1,5 @@
-body {
-    background-image: url(../images/fondologin.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
-.bg {
-    background-image: url(../images/loginok.webp);
-    background-position: center center;
-    background-size: cover;
-}
+
 
 h2 {
     color: white;
