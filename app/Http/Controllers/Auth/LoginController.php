@@ -8,33 +8,46 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+    public function register(Request $request){
+        // Validar los datos
 
-    use AuthenticatesUsers;
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
+        Auth::login($user);
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+        return redirect(route("privada"));
+
     }
+
+    public function login(Request $request){
+        // Validacion
+        $credentials = [
+            "email" => $request->email,
+            "password" => $request->password,
+        ];
+
+        $remember = ($request->has('remember') ? true : false);
+        
+        if(Auth::attempt($credentials, $remember)){
+            $request->session()->regenerate();
+            return redirect()->intended(route("privada"));
+        }
+        return redirect(route("login"));
+
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        // Estudiar estos dos metodos
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect(route('login'));
+
+    }
+
+
 }

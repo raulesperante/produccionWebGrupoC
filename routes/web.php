@@ -4,7 +4,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SpiritController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ Route::get('/spirit', [SpiritController::class, "index"])->name('spirit.index');
 //Route::get('/productos/editar', [ProductController::class, "edit"])->name('products.edit');
 //Route::get('/productos/eliminar', [ProductController::class, "destroy"])->name('products.destroy');
 
-Route::view("/login", "login")->name("login");
+Route::view("/login", "auth.login")->name("login");
 //Route::view("/registro", "register")->name("registro");
 Route::view("/privada", "secret")->middleware('auth')->name("privada");
 
@@ -59,6 +59,6 @@ Route::post("/logout", [LoginController::class, "logout"])->name("logout");
 
 Route::view("/registro", "auth.register")->name("auth.register");
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
