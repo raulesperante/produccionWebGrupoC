@@ -34,16 +34,16 @@
 
       <form action="#">
         <div class="mb-4">
-          <label for="correo" class="form-label">Correo Electronico</label>
-          <input type="email" class="form-control" id="correo" name="correo" required />
+          <label for="email" class="form-label">Correo Electronico</label>
+          <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required />
         </div>
         <div class="mb-4">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" name="password" required />
+          <input type="password" class="form-control" id="password" name="password" value="{{ old('email') }}" required />
         </div>
 
-        <div class="mb-4">
-          <div class="d-grid text-center a">
+        <div >
+          <div class="d-grid text-center pt-2">
             <button type="submit" class="btn btn-dark">Iniciar Sesión
           </div>
         </div>

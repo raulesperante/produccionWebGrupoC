@@ -9,7 +9,10 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class LoginController extends Controller
 {
     public function register(Request $request){
-        // Validar los datos
+        $request->validate([
+            'email' => 'required|string|email|unique:users|max:255',
+            'password' => 'required|string|max:255',
+        ], []);
 
         $user = new User();
         $user->name = $request->name;
