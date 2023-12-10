@@ -1,28 +1,36 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+
 
 class LoginController extends Controller
 {
     public function register(Request $request){
-        $request->validate([
-            'email' => 'required|string|email|unique:users|max:255',
-            'password' => 'required|string|max:255',
-        ], []);
+       // dd("Pasa por aca");
+       $request->validate([
+           'name' => 'required|string|max:255',
+           'surname' => 'required|string|max:255',
+           'email' => 'required|string|email|unique:users|max:255',
+           'password' => 'required|string|max:255',
+       ], []);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
+       $user = new User();
+       $user->name = $request->name;
+       $user->surname = $request->surname;
+       $user->email = $request->email;
+       $user->password = Hash::make($request->password);
+       $user->save();
 
-        Auth::login($user);
+       Auth::login($user);
 
-        return redirect(route("privada"));
+       return redirect(route("home"));
 
     }
 

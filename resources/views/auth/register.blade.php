@@ -32,14 +32,23 @@
 
       <!--LOGIN-->
 
-      <form action="#">
+      <form action="{{ route('auth.registerLogic') }}"  method="POST">
+         @csrf
+        <div class="mb-4">
+          <label for="name" class="form-label">Nombre</label>
+          <input type="name" class="form-control" id="name" name="name" value="{{ old('name') }}" required />
+        </div>
+        <div class="mb-4">
+          <label for="surname" class="form-label">Apellido</label>
+          <input type="surname" class="form-control" id="surname" name="surname" value="{{ old('surname') }}" required />
+        </div>
         <div class="mb-4">
           <label for="email" class="form-label">Correo Electronico</label>
           <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required />
         </div>
         <div class="mb-4">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" name="password" value="{{ old('email') }}" required />
+          <input type="password" class="form-control" id="password" name="password" value="{{ old('password') }}" required />
         </div>
 
         <div >
