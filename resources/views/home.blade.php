@@ -1,23 +1,36 @@
-@extends('layouts.app')
+@extends('layouts.app-client')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+    <div class="text-container">
+      <div class="container-fluid text-white">
+        <h1>HACE CLICK EN LA COLECCION QUE QUIERAS VER...!!!</h1>
+      </div>
     </div>
-</div>
+
+    <!--- IMAGENES DE LA COLECCION DE ROPA -->
+    <div class="img-content mb-5 mt-5">
+      <div class="row container-fluid">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <a href="street_flashback.html">
+            <img
+              class="img-fluid"
+              src="assets/images/logoflashbacks.jpeg"
+              alt="colleccionflashback"
+            />
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <a href="street_spirit.html">
+            <img
+              class="img-fluid"
+              src="assets/images/logospirit.jpeg"
+              alt="colleccionspirit"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+</body>
 @endsection

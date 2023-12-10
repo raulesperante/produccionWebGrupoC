@@ -57,23 +57,23 @@
               <a class="btn btn-dark btn-lg" href="inicio.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-success btn-lg" href="street_flashback.html"
+              <a class="btn btn-success btn-lg" href="{{ route('flashback.index') }}"
                 >Street Flash Back</a
               >
             </li>
             <li class="nav-item">
-              <a class="btn btn-danger btn-lg" href="street_spirit.html"
+              <a class="btn btn-danger btn-lg" href="{{ route('spirit.index') }}"
                 >Street Spirit</a
               >
             </li>
             <li class="nav-item">
               <a class="btn btn-dark btn-lg" href="contacto.html">Contacto</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="btn btn-dark btn-lg" href="./tucuenta.html"
                 >Tu Cuenta</a
               >
-            </li>
+            </li>!-->
           </ul>
           <form class="d-flex" role="search">
             <input
@@ -104,7 +104,6 @@
         <li><a href="mailto:uosugata@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a></li>
         <li><a href="https://www.instagram.com/uosugata/" target="_blank"><i class="fa fa-instagram"></i></a></li>
         <li><a href="https://www.facebook.com/Uosugata" target="_blank"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="https://www.google.com/webhp?hl=es&sa=X&ved=0ahUKEwi9m8yWlrT7AhU6qZUCHa0aCSYQPAgI" target="_blank"><i class="fa fa-google-plus"></i></a></li>
         <li><a href="#"><i class="fa fa-youtube"></i></a></li>
         <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
       </ul>
