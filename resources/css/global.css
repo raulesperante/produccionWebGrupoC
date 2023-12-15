@@ -1,0 +1,27 @@
+
+
+
+.titleUser{
+    color: blue;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.colorUser{
+    color: white !important;
+
+}
+
+.errorBox{
+    margin-bottom: 10px;
+    background-color: rgb(168, 43, 43);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.errorBox__text{
+    margin: 0;
+
+}
