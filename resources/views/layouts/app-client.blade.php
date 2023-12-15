@@ -40,7 +40,7 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           @if(!session("name"))
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Ingresar</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('login')}}">Ingresar</a>
           </li>
           @endif
           @if(session("name"))
