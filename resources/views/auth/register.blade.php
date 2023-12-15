@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-<div class="container w-75 bg-black mt-5 rounded shadow" id="log">
+<div class="container w-75 bg-black rounded shadow" id="log">
   <div class="row align-items-stretch">
     <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"></div>
     <div class="col p-5 rounded-end">

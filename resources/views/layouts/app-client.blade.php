@@ -30,7 +30,7 @@
 <body>
   <!--- BARRA DE NAVEGACION -->
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-absolute top-0 w-100">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
       </div>
     </div>
   </nav>
-  <nav class="navbar navbar-expand-lg bg-sucess">
+  <nav class="navbar navbar-expand-lg bg-sucess mt-4">
     <div class="container-fluid">
       <a class="navbar-brand p-2 m-1" href="inicio.html">
         <img src="/assets/images/logoprincipal.jpeg" alt="marca" width="250" height="100" class="img-fluid" />
