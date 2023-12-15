@@ -53,7 +53,7 @@
 
         <div >
           <div class="d-grid text-center pt-2">
-            <button type="submit" class="btn btn-dark">Iniciar Sesión
+            <button type="submit" class="btn btn-dark">Registrate
           </div>
         </div>
     </div>

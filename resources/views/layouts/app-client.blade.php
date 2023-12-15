@@ -20,6 +20,7 @@
     @vite([
         'resources/css/bootstrap.css',
         'resources/css/galeriaSpirit.css',
+        'resources/css/global.css',
 
     ])
 
@@ -29,6 +30,7 @@
 
   <body>
     <!--- BARRA DE NAVEGACION -->
+    <div class="titleUser">Bienvenido, Usuario</div>
     <nav class="navbar navbar-expand-lg bg-sucess">
       <div class="container-fluid">
         <a class="navbar-brand p-2 m-1" href="inicio.html">

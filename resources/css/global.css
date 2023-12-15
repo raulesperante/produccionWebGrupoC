@@ -1,0 +1,10 @@
+
+
+
+.titleUser{
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+    font-weight: bold;
+}
