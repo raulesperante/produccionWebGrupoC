@@ -31,9 +31,21 @@
 
       <h2 class="fw-bold text-center pt-5 mb-5">Ingresar</h2>
 
+
+      @if (session('error'))
+      <div class="errorBox">
+        <p class="errorBox__text">
+          {{ session('error') }}
+        </p>
+      </div>
+      @endif
+
+
+
       <!--LOGIN-->
 
-      <form action="#">
+      <form action="{{ route('auth.loginLogic') }}" method="POST">
+         @csrf
         <div class="mb-4">
           <label for="email" class="form-label">Correo Electrónico</label>
           <input type="email" class="form-control" id="email" name="email" required />

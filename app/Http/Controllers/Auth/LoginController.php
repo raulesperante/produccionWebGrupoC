@@ -50,7 +50,9 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended(route("privada"));
         }
-        return redirect(route("login"));
+        //return redirect(route("login"));
+        return redirect()->route("login")->with('error', 'Credenciales no válidas');
+
 
     }
 
