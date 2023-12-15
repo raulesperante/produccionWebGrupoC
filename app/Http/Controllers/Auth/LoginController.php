@@ -30,6 +30,9 @@ class LoginController extends Controller
 
        Auth::login($user);
 
+       // Save name sesion
+       session(["name" => $request->name]);
+
        return redirect(route("home"));
 
     }
