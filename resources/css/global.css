@@ -2,9 +2,14 @@
 
 
 .titleUser{
-    color: white;
+    color: blue;
     display: flex;
     justify-content: flex-end;
     margin-right: 15px;
     font-weight: bold;
+}
+
+.colorUser{
+    color: white !important;
+
 }
