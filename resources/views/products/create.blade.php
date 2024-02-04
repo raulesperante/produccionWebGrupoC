@@ -1,5 +1,16 @@
 @extends('layouts.app-admin')
 
+@section('resources')
+    <style>
+        body{
+            background-color: #e0524d;
+
+        }
+    </style>
+@endsection
+
+
+
 @section('title', 'Nuevo producto')
 
 @section('content')

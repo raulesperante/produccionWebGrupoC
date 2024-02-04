@@ -18,8 +18,11 @@
     @vite([
         'resources/sass/app.scss',
         'resources/css/admin/styles.css',
+        'resources/css/app.css',
         'resources/js/app.js'
     ])
+
+    @yield('resources')
 
 </head>
 

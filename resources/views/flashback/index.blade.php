@@ -1,11 +1,19 @@
 @extends('layouts.app-client');
 
+@section('resources')
+@vite([
+'resources/css/inicio.css',
+])
+<style>
+  body {
+    background-image: url("{{asset('/assets/images/fondostreetflash.jpg')}}");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+@endsection
 
 @section('content')
-
-  
-    
-  
     <section id="galeria1" class="container">
   
       <div class="text-center pt-5">

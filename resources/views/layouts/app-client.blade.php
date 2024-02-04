@@ -71,7 +71,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav m-auto">
           <li class="nav-item">
-            <a class="btn btn-dark btn-lg" href="inicio.html">Home</a>
+            <a class="btn btn-dark btn-lg" href="{{ route('home.index') }}">Home</a>
           </li>
           <li class="nav-item">
             <a class="btn btn-success btn-lg" href="{{ route('flashback.index') }}">Street Flash Back</a>
@@ -80,13 +80,8 @@
             <a class="btn btn-danger btn-lg" href="{{ route('spirit.index') }}">Street Spirit</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-dark btn-lg" href="contacto.html">Contacto</a>
+            <a class="btn btn-dark btn-lg" href="{{ route('contacto.index') }}">Contacto</a>
           </li>
-          <!--<li class="nav-item">
-              <a class="btn btn-dark btn-lg" href="./tucuenta.html"
-                >Tu Cuenta</a
-              >
-            </li>!-->
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
