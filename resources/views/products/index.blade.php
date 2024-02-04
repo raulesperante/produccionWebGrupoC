@@ -2,12 +2,21 @@
 
 @section('title', 'Lista de products')
 
+@section('resources')
+    <style>
+        body{
+            background-color: #e0524d;
+
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Productos') }}</div>
+                <div class="card" style="border: 1px solid #a33d39">
+                    <div style="background: #21b1ca; color: white" class="card-header">{{ __('Productos') }}</div>
 
                     <div class="card-body">
 
@@ -16,7 +25,7 @@
                         @endif
 
                         <div class="mb-3">
-                            <a href="{{ route('products.create') }}" class="btn btn-primary"> 
+                            <a href="{{ route('products.create') }}" class="btn button-primary"> 
                                 <i class="fa-solid fa-plus"></i>
                                 Agregar producto 
                             </a>
@@ -41,9 +50,9 @@
                                             <td> {{ $product->price }} </td>
                                             <td> {{ $product->amount }} </td>
                                             <td> 
-                                                <ul>
-                                                    <li class="mb-3">
-                                                        <a href="{{ route('products.show', $product) }}" class="btn btn-primary"> 
+                                                <ul style="padding-left: 1px">
+                                                    <li class="mb-3 no-list-style  ">
+                                                        <a href="{{ route('products.show', $product) }}" class="btn button-primary"> 
                                                             <i class="fa-solid fa-eye"></i>
                                                             Ingresar 
                                                         </a>
