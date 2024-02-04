@@ -71,7 +71,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav m-auto">
           <li class="nav-item">
-            <a class="btn btn-dark btn-lg" href="inicio.html">Home</a>
+            <a class="btn btn-dark btn-lg" href="{{ route('home.index') }}">Home</a>
           </li>
           <li class="nav-item">
             <a class="btn btn-success btn-lg" href="{{ route('flashback.index') }}">Street Flash Back</a>
