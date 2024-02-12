@@ -25,7 +25,7 @@
     <div class="row">
       <div class="row mb-5  ">
         <div class="col-6 text-center" >
-          <a href="street_flashback.html">
+          <a href="{{ route('flashback.index') }}">
             <img
               style="max-height: 30em"
               class="img-fluid"
@@ -35,7 +35,7 @@
           </a>
         </div>
         <div class="col-6 text-center">
-          <a href="street_spirit.html">
+          <a href="{{ route('spirit.index') }}">
             <img
               style="max-height: 30em"
               class="img-fluid"

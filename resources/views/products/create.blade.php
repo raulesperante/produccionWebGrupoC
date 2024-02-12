@@ -18,7 +18,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Productos') }}</div>
+                    <div style="background: #21b1ca; color: white" class="card-header">{{ __('Productos') }}</div>
 
                     <div class="card-body">
 
