@@ -18,7 +18,7 @@
 
     .page-link,
     .page-link:hover {
-        color: orangered
+        color:#e0524d;
     }
 </style>
 @endsection
