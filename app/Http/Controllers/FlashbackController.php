@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class FlashbackController extends Controller
 {
@@ -11,7 +12,16 @@ class FlashbackController extends Controller
      */
     public function index()
     {
-        return view('flashback.index');
+        $products = Product::with('category')
+            ->where('is_visible', true)
+            ->whereHas('category', function ($query) {
+                $query->where('name', 'Flash Back');
+            })
+            ->paginate(10);
+
+        return view('flashback.index', [
+            'products' => $products
+        ]);
     }
 
     /**

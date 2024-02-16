@@ -11,5 +11,8 @@
 
 .no-list-style{
     list-style: none ;
+}
 
+.bg-black{
+    background-color: black;
 }
