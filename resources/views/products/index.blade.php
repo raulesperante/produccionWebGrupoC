@@ -38,6 +38,7 @@
                                     <th> Descripción </th>
                                     <th> Precio </th>
                                     <th> Cantidad </th>
+                                    <th> Categoría </th>
                                     <th> Acciones </th>
                                 </tr>
                             </thead>
@@ -49,6 +50,7 @@
                                             <td> {{ $product->description }} </td>
                                             <td> {{ $product->price }} </td>
                                             <td> {{ $product->amount }} </td>
+                                            <td> {{ $product->category->name }} </td>
                                             <td> 
                                                 <ul style="padding-left: 1px">
                                                     <li class="mb-3 no-list-style  ">
