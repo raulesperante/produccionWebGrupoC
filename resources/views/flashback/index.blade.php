@@ -28,9 +28,10 @@
 
         @foreach ($products as $product)
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <img src="assets/images/remera1.jpeg" alt="Galeria flash back">
-            <p class="bg-black text-center"> {{$product->name}} ${{$product->price}} <br/> {{$product->description}}</p>
-            <button class="btn btn-danger btn-lg" ><i class="fa-solid fa-cart-shopping"></i> COMPRAR
+            <img src={{ asset("storage/" . $product->image )}} alt="{{ $product->name}}">
+            <p class="bg-black text-center py-2"> {{$product->name}} ${{$product->price}} <br />
+                {{$product->description}}</p>
+            <button class="btn btn-danger btn-lg"><i class="fa-solid fa-cart-shopping"></i> COMPRAR
             </button>
         </div>
         @endforeach
