@@ -44,7 +44,12 @@ class ProductController extends Controller
             'amount' => 'required',
             'image' => 'required|mimes:jpg,png'
         ], [
-            'nombre.required' => 'El nombre del producto es obligatorio'
+            'name.required' => 'El campo nombre es obligatorio',
+            'description.required' => 'El campo descripción es obligatorio',
+            'price.required' => 'El campo precio es obligatorio',
+            'category_id.required' => 'El campo categoría es obligatorio',
+            'amount.required' => 'El campo cantidad es obligatorio',
+            'image.required' => 'El campo imagen es obligatorio',
         ]);
 
         $image_name = time() . '_' . $request->file('image')->getClientOriginalName();

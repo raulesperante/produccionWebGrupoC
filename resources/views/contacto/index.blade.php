@@ -1,8 +1,19 @@
 @extends('layouts.app-client');
 
+@section('resources')
+@vite([
+'resources/css/contacto.css',
+])
+<style>
+  body {
+    background-image: url("{{asset('/assets/images/contactofondook.jpg')}}");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+@endsection
+
 @section('content')
-
-
     <div
       class="container w-75 bg-black opacity-75 mt-5 rounded shadow"
       id="log"

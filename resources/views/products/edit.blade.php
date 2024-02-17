@@ -1,13 +1,24 @@
 @extends('layouts.app-admin')
 
+@section('resources')
+    <style>
+        body{
+            background-color: #e0524d;
+
+        }
+    </style>
+@endsection
+
+
+
 @section('title', 'Editar producto')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Productos') }}</div>
+                <div class="card" style="border: 1px solid #a33d39">
+                    <div class="card-header" style="background: #21b1ca; color: white">{{ __('Productos') }}</div>
 
                     <div class="card-body">
 
