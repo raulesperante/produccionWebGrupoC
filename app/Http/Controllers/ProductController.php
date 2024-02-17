@@ -8,12 +8,16 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Product::where('is_visible', true)->paginate(10);
+        //$products = Product::where('is_visible', true)->paginate(10);
+        $products = Product::with('category')->where('is_visible', true)->paginate(10);
+
 
         return view('products.index', [
             'products' => $products

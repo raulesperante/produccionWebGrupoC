@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 
 Route::view("/login", "auth.login")->name("login");
-//Route::view("/registro", "register")->name("registro");
 Route::view("/privada", "secret")->middleware('auth')->name("privada");
 
 Route::post("/registro", [LoginController::class, "register"])->name("auth.registerLogic");

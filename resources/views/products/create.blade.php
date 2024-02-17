@@ -18,7 +18,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Productos') }}</div>
+                    <div style="background: #21b1ca; color: white" class="card-header">{{ __('Productos') }}</div>
 
                     <div class="card-body">
 
@@ -61,7 +61,7 @@
                             <div class="mb-3">
                                 <label for="category_id" class="form-label"> Categoría </label>
                                 <select class="form-control" name="category_id" id="category_id">
-                                    <option value=""> Por favor seleccione la categoría del producto </option>
+                                    <option value="1"> Por favor seleccione la categoría del producto </option>
                                     @foreach ($categories as $cat)
                                         <option @selected( old('category_id') == $cat->id ) value="{{ $cat->id }}"> {{ $cat->name }} </option>
                                     @endforeach
