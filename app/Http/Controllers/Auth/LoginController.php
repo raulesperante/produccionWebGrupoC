@@ -33,7 +33,7 @@ class LoginController extends Controller
        // Save name sesion
        session(["name" => $request->name]);
 
-       return redirect(route("home"));
+       return redirect(route("home.index"));
 
     }
 
@@ -48,9 +48,13 @@ class LoginController extends Controller
         
         if(Auth::attempt($credentials, $remember)){
             $request->session()->regenerate();
-            return redirect()->intended(route("privada"));
+            $user = User::where('email', $request->email)->first();
+            // Save name sesion
+            session(["name" => $user->name]);
+
+            // Aquí se puede mandar al usuario a páginas privadas
+            return redirect()->intended(route("home.index"));
         }
-        //return redirect(route("login"));
         return redirect()->route("login")->with('error', 'Credenciales no válidas');
 
 
