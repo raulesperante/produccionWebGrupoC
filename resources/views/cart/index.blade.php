@@ -32,19 +32,21 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <form action="post">
+                            <form action="{{ route('cart.handleItem') }}" method="POST">
+                                @csrf
                                 <th scope="row">Remera</th>
                                 <td>$10000</td>
                                 <td class="row" style="width: 50%">
                                     <div class="col-11">
                                         <div class="input-group">
                                             <input type="number" class="form-control" aria-label="Cantidad">
-                                            <button type="button" class="btn btn-success">Modificar</button>
+                                            <button type="submit" name="submit_action" value="modify"
+                                                class="btn btn-success">Modificar</button>
                                         </div>
                                     </div>
-
                                     <div class="col-1">
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
+                                        <button type="submit" name="submit_action" class="btn btn-danger"
+                                            value="delete">Eliminar</button>
                                     </div>
                                 </td>
                                 <td>

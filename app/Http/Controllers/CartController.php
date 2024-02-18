@@ -14,6 +14,23 @@ class CartController extends Controller
         return view('cart.index');
     }
 
+    public function handleItem(Request $request)
+    {
+        $action = $request->input('submit_action');
+
+        // Ahora $action contiene el valor del botón presionado
+    
+        if ($action === 'modify') {
+            dd($action);
+            // Lógica para la acción de modificar
+        } elseif ($action === 'delete') {
+            dd($action);
+            // Lógica para la acción de eliminar
+        } 
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      */
