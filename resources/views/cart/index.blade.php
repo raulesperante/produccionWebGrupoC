@@ -20,7 +20,10 @@
 
     <div class="row" style="margin-bottom: 5em; margin-top: 5em;">
         <div class="card p-4">
+            @if(count($cart) < 0)
             <div class="card-header bg-dark text-white">Carrito</div>
+            @else
+            <h5 class="text-center mt-3">El carrito está vacío</h5>
             <div class="card-body">
                 <table class="table">
                     <thead>
@@ -31,6 +34,7 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($cart as $cartItem)
                         <tr>
                             <form action="{{ route('cart.handleItem') }}" method="POST">
                                 @csrf
@@ -53,9 +57,11 @@
                                 </td>
                             </form>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
+            @endif
         </div>
 
     </div>

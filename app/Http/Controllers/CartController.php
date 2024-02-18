@@ -12,7 +12,11 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('cart.index');
+        $cart = session('cart', []);
+
+        return view('cart.index', [
+            'cart' => $cart
+        ]);
     }
 
     public function handleItem(Request $request)
