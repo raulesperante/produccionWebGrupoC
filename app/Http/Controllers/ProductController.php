@@ -15,7 +15,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //$products = Product::where('is_visible', true)->paginate(10);
         $products = Product::with('category')->where('is_visible', true)->paginate(10);
 
 

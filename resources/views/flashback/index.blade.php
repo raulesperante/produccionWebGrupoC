@@ -28,11 +28,16 @@
 
         @foreach ($products as $product)
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <img src={{ asset("storage/" . $product->image )}} alt="{{ $product->name}}">
-            <p class="bg-black text-center py-2"> {{$product->name}} ${{$product->price}} <br />
-                {{$product->description}}</p>
-            <button class="btn btn-danger btn-lg"><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
-            </button>
+            <form action="{{ route('cart.store', $product) }}" method="POST">
+                @csrf
+                <input type="hidden" name="id" value="{{$product->id}}">
+                <img src={{ asset("storage/" . $product->image )}} alt="{{ $product->name}}">
+                <p class="bg-black text-center py-2"> {{$product->name}} ${{$product->price}} <br />
+                    {{$product->description}}</p>
+                <button type="submit" class="btn btn-danger btn-lg">
+                    <i class="fa-solid fa-cart-shopping"></i> COMPRAR
+                </button>
+            </form>
         </div>
         @endforeach
         @else
