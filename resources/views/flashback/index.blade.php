@@ -18,7 +18,7 @@
 
     <div class="text-center pt-5">
         <h1 id="titulopag"> COLECCION STREET FLASH BACK</h1>
-        <p id="subtit"> [ Espiritu Fueguino ]</p>
+        <p id="subtitulo"> [ Espiritu Fueguino ]</p>
     </div>
 
     <div class="row">
@@ -31,7 +31,7 @@
             <img src={{ asset("storage/" . $product->image )}} alt="{{ $product->name}}">
             <p class="bg-black text-center py-2"> {{$product->name}} ${{$product->price}} <br />
                 {{$product->description}}</p>
-            <button class="btn btn-danger btn-lg"><i class="fa-solid fa-cart-shopping"></i> COMPRAR
+            <button class="btn btn-danger btn-lg"><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
             </button>
         </div>
         @endforeach
