@@ -18,7 +18,7 @@
 
     <div class="text-center pt-5">
         <h1 id="titulopag"> COLECCION STREET FLASH BACK</h1>
-        <p id="subtit"> [ Espiritu Fueguino ]</p>
+        <p id="subtitulo"> [ Espiritu Fueguino ]</p>
     </div>
 
     <div class="row">

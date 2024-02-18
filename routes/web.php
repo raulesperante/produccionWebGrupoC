@@ -16,3 +16,4 @@ Route::get('/spirit', [SpiritController::class, "index"])->name('spirit.index');
 Route::get('/flashback', [FlashbackController::class, "index"])->name('flashback.index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+
 
 class SpiritController extends Controller
 {
@@ -11,7 +13,17 @@ class SpiritController extends Controller
      */
     public function index()
     {
-        return view('spirit.index');
+        $products = Product::with('category')
+        ->where('is_visible', true)
+        ->whereHas('category', function ($query) {
+            $query->where('name', 'Spirit');
+        })
+        ->paginate(10);
+
+        return view('spirit.index', [
+        'products' => $products
+    ]);
+        
     }
 
     /**

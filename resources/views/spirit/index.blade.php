@@ -22,52 +22,66 @@
 
     </div>
     <div class="row">
+
+        @if ($products ->count() > 0)
+
+        @foreach ($products as $product)
         <div class="col-lg-4 col-md-6 col-sm-12">
+            <img src={{ asset("storage/" . $product->image )}} alt="{{ $product->name}}">
+            <p class="bg-black text-center py-2"> {{$product->name}} ${{$product->price}} <br />
+                {{$product->description}}</p>
+            <button class="btn btn-danger btn-lg"><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
+            </button>
+        </div>
+        @endforeach
+        @else
+        <div class="text-center" style="height: 200px">
+            <h1 class="bg-black text-danger py-2"> No hay productos en stock en esta categoría</h1>
+        </div>
+        @endif
+
+        {{--<div class="col-lg-4 col-md-6 col-sm-12">
             <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
             <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> COMPRAR
+            <button class="btn btn-danger btn-lg" ><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
             </button>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
             <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
             <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> COMPRAR
+            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
             </button>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
             <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
             <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> COMPRAR
+            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
             </button>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
             <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
             <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> COMPRAR
+            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
             </button>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
             <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
             <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> COMPRAR
+            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
             </button>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
             <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
             <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> COMPRAR
+            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
             </button>
-        </div>
+        </div>--}}
 
 
-
-
-
-
-
-        
+       
     </div>
-  </section>
+</section>
+</body>
 @endsection
   
 
