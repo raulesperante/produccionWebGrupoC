@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
-use function Laravel\Prompts\progress;
 
 class CartController extends Controller
 {
