@@ -50,9 +50,20 @@ class CartController extends Controller
                 'productIdError' => $request->id,
             ]);
         } elseif ($action === 'delete') {
-            dd($action);
-            // Lógica para la acción de eliminar
+            if (array_key_exists($product->id, $cart)) {
+                unset($cart[$product->id]);
+                $request->session()->put('cart', $cart);
+                return view('cart.index', [
+                    'cart' => $cart,
+                    'msg' => 'El producto ha sido eliminado'
+                ]);
+            }
+            return view('cart.index', [
+                'cart' => $cart,
+                'msgError' => 'El producto ha sido eliminado'
+            ]);
         }
+        return redirect()->back();
     }
 
 
