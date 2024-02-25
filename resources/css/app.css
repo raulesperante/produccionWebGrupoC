@@ -5,8 +5,8 @@
 }
 
 .button-primary:hover{
-    background-color: #a33d39;
-    color: white;
+    background-color: #a33d39 !important;
+    color: white !important;
 }
 
 .no-list-style{

@@ -21,6 +21,7 @@
   'resources/css/bootstrap.css',
   'resources/css/galeriaSpirit.css',
   'resources/css/global.css',
+  'resources/css/app.css',
   ])
 
   @yield('resources')
