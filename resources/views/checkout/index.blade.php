@@ -15,16 +15,21 @@
         display: block;
     }
 
-    #shipping-cost{
+    #shipping-cost {
         display: none;
+    }
 
+    #shippingCostButton:disabled {
+        background-color: #ccc;
+        color: black;
+        opacity: 0.6;
     }
 </style>
 @endsection
 
 @section('content')
 <section id="galeria1" class="container">
-
+    <meta style="display: none" name="csrf-token" content="{{ csrf_token() }}">
     <div class="row" style="margin-bottom: 5em; margin-top: 5em;">
         <div class="card p-4">
             <div class="card-header bg-dark text-white">Completá tus datos</div>
@@ -75,9 +80,10 @@
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <div class="input-group mb-3">
-                                            <input min="1000" max="9000" type="number" class="form-control"
-                                                placeholder="Código postal" aria-label="Código postal"
-                                                aria-describedby="basic-addon1" name="postalCode">
+                                            <input id="postalCode" min="1000" max="9000" type="number"
+                                                class="form-control" placeholder="Código postal"
+                                                aria-label="Código postal" aria-describedby="basic-addon1"
+                                                name="postalCode">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6">
@@ -103,11 +109,11 @@
                                         </div>
                                     </div>
 
-                                    <button onclick="calculateShippingCost()"  class="btn button-primary">
+                                    <button disabled onclick="calculateShippingCost()" class="btn button-primary"
+                                        id="shippingCostButton">
                                         Calcular costo de envío
                                     </button>
                                     <div id="shipping-cost" class="col-12 shippingCost">
-                                        $1500
                                     </div>
 
 
@@ -138,6 +144,19 @@
 </body>
 @endsection
 <script>
+    window.addEventListener('load', function() {
+        document.querySelector("#postalCode").addEventListener("input", function(e){
+            if(e.target.value){
+                document.getElementById('shippingCostButton').disabled = false;
+            }else{
+                document.getElementById('shippingCostButton').disabled = true;
+
+            }
+            document.getElementById('shipping-cost').innerText = "";
+            document.querySelector("#shipping-cost").style.display="none"
+        })
+    });
+
     function showOptShipping(flag){
         if(flag){
           document.querySelector("#opt-shipping").style.display="block"
@@ -147,8 +166,23 @@
     }
 
     function calculateShippingCost(){
-        document.querySelector("#shipping-cost").innerHTML = "$20009"
-        document.querySelector("#shipping-cost").style.display="block"
+        const token = document.querySelector('meta[name="csrf-token"]').content;
+        fetch('calculateShippingCost', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': token
+            },
+            body: JSON.stringify({}),
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('shipping-cost').innerText = "$" + data.cost;
+            document.querySelector("#shipping-cost").style.display="block"
+        })
+        .catch(error => {
+            console.error('Error al obtener datos:', error);
+        });
     }
 
 </script>

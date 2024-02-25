@@ -18,6 +18,17 @@ class CheckoutController extends Controller
         return view('checkout.index');
     }
 
+    public function calculateShippingCost(Request $request)
+    {
+        // Lógica para procesar datos de la solicitud POST
+        $datos = $request->all();
+
+        // Realizar alguna lógica con los datos y devolver una respuesta
+        $response = ['cost' => 1500];
+
+        return response()->json($response);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
