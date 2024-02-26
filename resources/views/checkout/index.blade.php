@@ -12,7 +12,7 @@
     }
 
     #opt-shipping {
-        display: block;
+        display: none;
     }
 
     #shipping-cost {
