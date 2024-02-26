@@ -24,6 +24,10 @@
         color: black;
         opacity: 0.6;
     }
+
+    #msgErrorPostalCode {
+        display: none;
+    }
 </style>
 @endsection
 
@@ -79,12 +83,13 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6">
-                                        <div class="input-group mb-3">
+                                        <div class="input-group ">
                                             <input id="postalCode" min="1000" max="9000" type="number"
                                                 class="form-control" placeholder="Código postal"
                                                 aria-label="Código postal" aria-describedby="basic-addon1"
                                                 name="postalCode">
                                         </div>
+                                        <div id="msgErrorPostalCode" class="text-danger">El código postal debe estar entre estos dos valores: 1000 y 9000</div>
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <div class="input-group mb-3">
@@ -148,6 +153,14 @@
         document.querySelector("#postalCode").addEventListener("input", function(e){
             if(e.target.value){
                 document.getElementById('shippingCostButton').disabled = false;
+                const value = Number(e.target.value);
+                // Value ok
+                if(value >= 1000 && value <= 9000){
+                    document.getElementById('msgErrorPostalCode').style.display = "none";
+                }else{
+                    document.getElementById('msgErrorPostalCode').style.display = "block";
+                    document.getElementById('shippingCostButton').disabled = true;
+                }
             }else{
                 document.getElementById('shippingCostButton').disabled = true;
 
@@ -167,13 +180,14 @@
 
     function calculateShippingCost(){
         const token = document.querySelector('meta[name="csrf-token"]').content;
+        const value = Number(document.querySelector("#postalCode").value)
         fetch('calculateShippingCost', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRF-TOKEN': token
             },
-            body: JSON.stringify({}),
+            body: JSON.stringify({postalCode: value}),
         })
         .then(response => response.json())
         .then(data => {

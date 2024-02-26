@@ -20,13 +20,20 @@ class CheckoutController extends Controller
 
     public function calculateShippingCost(Request $request)
     {
-        // Lógica para procesar datos de la solicitud POST
-        $datos = $request->all();
-
-        // Realizar alguna lógica con los datos y devolver una respuesta
-        $response = ['cost' => 1500];
-
-        return response()->json($response);
+        // Simulo cálculo de costo de envío
+        try {
+            $postalCode = $request->input('postalCode');
+            if($postalCode >= 1000 && $postalCode <= 3000){
+                $response = ['cost' => 5000];
+            }else if($postalCode >= 3001 && $postalCode <=5000){
+                $response = ['cost' => 8000];
+            }else{
+                $response = ['cost' => 12000];
+            }
+            return response()->json($response);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
     /**
