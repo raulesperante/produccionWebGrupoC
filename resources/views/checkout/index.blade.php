@@ -20,9 +20,9 @@
     }
 
     #shippingCostButton:disabled {
-        background-color: #ccc;
-        color: black;
-        opacity: 0.6;
+        color: gray;
+        background: #eee;
+        opacity: 1;
     }
 
     #msgErrorPostalCode {
@@ -74,7 +74,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div id="opt-shipping" class="col-12 mt-2">
+                            <div id="opt-shipping" class="col-12 col-md-10 mt-2">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="input-group mb-3">
@@ -89,9 +89,10 @@
                                                 aria-label="Código postal" aria-describedby="basic-addon1"
                                                 name="postalCode">
                                         </div>
-                                        <div id="msgErrorPostalCode" class="text-danger">El código postal debe estar entre estos dos valores: 1000 y 9000</div>
+                                        <div id="msgErrorPostalCode" class="text-danger">El código postal debe estar
+                                            entre estos dos valores: 1000 y 9000</div>
                                     </div>
-                                    <div class="col-12 col-sm-6">
+                                    <div class="col-12 col-sm-6 mt-3  mt-md-0">
                                         <div class="input-group mb-3">
                                             <select class="form-select" aria-label="Provincia">
                                                 <option selected disabled>Provincia</option>
@@ -129,7 +130,61 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6"></div>
+                    <div class="col-12 col-sm-6 ">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="cash" checked>
+                                <label class="form-check-label" for="cash">
+                                    Efectivo en la tienda
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="card">
+                                <label class="form-check-label" for="card">
+                                    Tarjeta de Crédito o Débito
+                                </label>
+                            </div>
+                            <div class="row mt-2">
+
+                                <div class="col-12 col-md-8">
+
+                        <div style="background: #eee" class="p-2" >
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label for="cardNumber" class="form-label">Número de Tarjeta</label>
+                                            <div class="input-group ">
+                                                <input id="cardNumber" min="13" max="18" type="number"
+                                                    class="form-control" placeholder="XXXXXXXXXXXX"
+                                                    aria-label="Número de Tarjeta" aria-describedby="Número de Tarjeta">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1">
+                                        <div class="col-6">
+                                            <label for="cardExpiration" class="form-label">Caducidad (dd/mm)</label>
+                                            <div class="input-group ">
+                                                <input pattern="\d{2}/\d{2}" title="Formato válido: dd/mm"
+                                                    id="cardExpiration" type="text" class="form-control"
+                                                    placeholder="XXXX" aria-label="Caducidad de Tarjeta"
+                                                    aria-describedby="Caducidad de Tarjeta">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="cardCode" class="form-label">Código</label>
+                                            <div class="input-group ">
+                                                <input title="Introduzca tres dígitos" pattern="\d{3}" id="cardCode"
+                                                    type="text" class="form-control" placeholder="XXX"
+                                                    aria-label="Código de Tarjeta" aria-describedby="Código de Tarjeta">
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                                    <div class="col-12">
+                                        <button class="mt-3 btn button-primary w-100">Finalizar Compra</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
