@@ -5,8 +5,8 @@
 }
 
 .button-primary:hover{
-    background-color: #a33d39;
-    color: white;
+    background-color: #a33d39 !important;
+    color: white !important;
 }
 
 .no-list-style{
@@ -15,4 +15,15 @@
 
 .bg-black{
     background-color: black;
+}
+
+.shippingCost{
+    margin-top: 0.5em;
+    border: 2px solid green;
+    background-color: lightgreen;
+    text-align: center;
+    font-size: 2.2em;
+    color: darkgreen;
+    font-weight: 500;
+
 }
