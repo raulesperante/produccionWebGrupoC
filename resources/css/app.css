@@ -27,3 +27,14 @@
     font-weight: 500;
 
 }
+
+.button-finalize-purchase{
+    background-color:#afb62b;
+    color: brown;
+}
+
+.button-finalize-purchase:hover{
+    background-color: #d3d84f !important;
+    color: brown !important;
+}
+
