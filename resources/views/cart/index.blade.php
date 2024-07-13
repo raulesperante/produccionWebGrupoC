@@ -73,6 +73,14 @@
                 </tbody>
             </table>
         </div>
+        <div class="row">
+            <div class="col-sm-6 col-12">
+                <a href="{{ route('home.index') }}" class="btn btn-danger"><b>SEGUIR COMPRANDO</b></a>
+            </div>
+            <div class="col-sm-6 col-12">
+                <a href="{{ route('checkout.index') }}" class="btn button-gold2"><b>IR A PAGAR</b></a>
+            </div>
+        </div>
         @endif
     </div>
 
