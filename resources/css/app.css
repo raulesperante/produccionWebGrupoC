@@ -28,13 +28,23 @@
 
 }
 
-.button-finalize-purchase{
+.button-gold{
     background-color:#afb62b;
     color: brown;
 }
 
-.button-finalize-purchase:hover{
+.button-gold:hover{
     background-color: #d3d84f !important;
     color: brown !important;
+}
+
+.button-gold2{
+    background-color:#afb62b;
+    color: black;
+}
+
+.button-gold2:hover{
+    background-color: #d3d84f !important;
+    color: black !important;
 }
 

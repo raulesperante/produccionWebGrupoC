@@ -98,7 +98,7 @@
 
                                 <div class="col-12 col-md-8">
                                     <div class="col-12">
-                                        <button class="mt-3 btn button-finalize-purchase w-100"><b>FINALIZAR COMPRA<b/></button>
+                                        <button class="mt-3 btn button-gold w-100"><b>FINALIZAR COMPRA<b/></button>
                                     </div>
                             </div>
                         </div>
