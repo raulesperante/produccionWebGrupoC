@@ -27,11 +27,15 @@
 
         @foreach ($products as $product)
         <div class="col-lg-4 col-md-6 col-sm-12">
+            <form action="{{ route('cart.store', $product) }}" method="POST">
+            @csrf
+            <input type="hidden" name="id" value="{{$product->id}}">
             <img src={{ asset("storage/" . $product->image )}} alt="{{ $product->name}}">
             <p class="bg-black text-center py-2"> {{$product->name}} ${{$product->price}} <br />
                 {{$product->description}}</p>
-            <button class="btn btn-danger btn-lg"><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
+            <button type="submit" class="btn btn-danger btn-lg"><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
             </button>
+            </form>
         </div>
         @endforeach
         @else
@@ -39,45 +43,6 @@
             <h1 class="bg-black text-danger py-2"> No hay productos en stock en esta categoría</h1>
         </div>
         @endif
-
-        {{--<div class="col-lg-4 col-md-6 col-sm-12">
-            <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
-            <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" ><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
-            </button>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
-            <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
-            </button>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
-            <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
-            </button>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
-            <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
-            </button>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
-            <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
-            </button>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <img src="assets/images/buzo1.jpeg" alt="Galeria flash back">
-            <p class="bg-black text-center"> BUZO DE FRISA (PHOENIX) $6.800,00</p>
-            <button class="btn btn-danger btn-lg" disabled><i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
-            </button>
-        </div>--}}
-
-
        
     </div>
 </section>

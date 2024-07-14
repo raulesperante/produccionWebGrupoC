@@ -48,3 +48,30 @@
     color: black !important;
 }
 
+.text-total{
+    color: black;
+    font-size: 1.5em;
+
+}
+
+#thanks-page h1{
+    color: green;
+    font-size: 2em;
+    font-weight: bold;
+}
+#thanks-page p{
+    color: green;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#no-authorized-page h1{
+    color: rgb(116, 25, 25);
+    font-size: 2em;
+    font-weight: bold;
+}
+#no-authorized-page p{
+    color: rgb(116, 25, 25);
+    font-weight: bold;
+    margin-bottom: 0;
+}
