@@ -72,6 +72,11 @@
                         @endforeach
                 </tbody>
             </table>
+        @if(isset($total) && $total > 0)
+        <div class="row">
+            <p class="text-total">Total ${{$total}}</p>
+        </div>
+        @endif
         </div>
         <div class="row">
             <div class="col-sm-6 col-12">
