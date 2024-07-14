@@ -128,7 +128,7 @@
                         </div>
                         <div class="row mt-2">
 
-                            <form  action="{{ route('general.thanks') }}" method="POST">
+                            <form  action="{{ route('finalizePurchase') }}" method="POST">
                             @csrf
                             <div class="col-12 col-md-8">
                                 <div class="col-12">

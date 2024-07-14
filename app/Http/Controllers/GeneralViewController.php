@@ -7,13 +7,7 @@ use Illuminate\Http\Request;
 class GeneralViewController extends Controller
 {
     
-    /**
-     * Display a listing of the resource.
-     */
-    public function thanks()
-    {
-        return view('general.thanks');
-    }
+
     /**
      * Display a listing of the resource.
      */
