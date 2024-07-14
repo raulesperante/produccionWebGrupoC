@@ -36,6 +36,35 @@
     <meta style="display: none" name="csrf-token" content="{{ csrf_token() }}">
     <div class="row" style="margin-bottom: 5em; margin-top: 5em;">
         <div class="card p-4">
+            @if(count($cart) == 0)
+            <div class="card-header bg-dark text-white mb-2">Tu carrito está vacío</div>
+            @else
+            <div class="card-header bg-dark text-white mb-2">Productos</div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($cart as $productId => $productData)
+                        <tr>
+                            <td scope="row">{{$productData['name']}}</td>
+                            <td>{{$productData['amount']}}</td>
+                            <td>${{$productData['price']}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                @if(isset($total) && $total > 0)
+                <div class="row">
+                    <p style="padding-left: 1em" class="text-total">Total ${{$total}}</p>
+                </div>
+                @endif
+            </div>
             <div class="card-header bg-dark text-white">Completá tus datos</div>
             <div class="card-body">
                 <div class="row">
@@ -72,34 +101,37 @@
                                     <label class="form-check-label" for="flexRadioDefault2">
                                         Envío a domicilio
                                     </label>
-                                    <br/>
-                                    <div style="font-size: 11px">Acordar entrega por mensajería interna al finalizar la compra</div>
+                                    <br />
+                                    <div style="font-size: 11px">Acordar entrega por mensajería interna al finalizar la
+                                        compra</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 ">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod"  value="cash" id="cash" checked>
-                                <label class="form-check-label" for="cash">
-                                    Efectivo en la tienda
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod" value="card" id="card">
-                                <label class="form-check-label" for="card">
-                                    Transferencia Bancaria
-                                </label>
-                            </div>
-                            <div class="row mt-2">
-                                <img style="height: 250px; width: 400px" src="/assets/images/cbu_dummy.png" alt="marca" class="img-fluid" />
-                            </div>
-                            <div class="row mt-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" value="cash" id="cash"
+                                checked>
+                            <label class="form-check-label" for="cash">
+                                Efectivo en la tienda
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentMethod" value="card" id="card">
+                            <label class="form-check-label" for="card">
+                                Transferencia Bancaria
+                            </label>
+                        </div>
+                        <div class="row mt-2">
+                            <img style="height: 250px; width: 400px" src="/assets/images/cbu_dummy.png" alt="marca"
+                                class="img-fluid" />
+                        </div>
+                        <div class="row mt-2">
 
-                                <div class="col-12 col-md-8">
-                                    <div class="col-12">
-                                        <button class="mt-3 btn button-gold w-100"><b>FINALIZAR COMPRA<b/></button>
-                                    </div>
+                            <div class="col-12 col-md-8">
+                                <div class="col-12">
+                                    <button class="mt-3 btn button-gold w-100"><b>FINALIZAR COMPRA<b /></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,6 +140,7 @@
 
 
             </div>
+            @endif
 
         </div>
 

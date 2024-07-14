@@ -11,11 +11,22 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        //$products = Product::with('category')->where('is_visible', true)->paginate(10);
-        //return view('products.index', [
-        //    'products' => $products
-        //]);
-        return view('checkout.index');
+        $cart = session('cart', []);
+
+        return view('checkout.index', [
+            'cart' => $cart,
+            'total' => $this->calculateCostCart($cart)
+        ]);
+    }
+
+    private function calculateCostCart($cart)
+    {
+        $total = 0;
+        foreach ($cart as $productId => $productData) {
+            $total += $productData['price'] * $productData['amount'];
+        }
+        $formatMoney = number_format($total, 2, ',', '.');
+        return $formatMoney;
     }
 
     public function calculateShippingCost(Request $request)
@@ -23,11 +34,11 @@ class CheckoutController extends Controller
         // Simulo cálculo de costo de envío
         try {
             $postalCode = $request->input('postalCode');
-            if($postalCode >= 1000 && $postalCode <= 3000){
+            if ($postalCode >= 1000 && $postalCode <= 3000) {
                 $response = ['cost' => 5000];
-            }else if($postalCode >= 3001 && $postalCode <=5000){
+            } else if ($postalCode >= 3001 && $postalCode <= 5000) {
                 $response = ['cost' => 8000];
-            }else{
+            } else {
                 $response = ['cost' => 12000];
             }
             return response()->json($response);
