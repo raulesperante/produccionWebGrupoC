@@ -128,11 +128,15 @@
                         </div>
                         <div class="row mt-2">
 
+                            <form  action="{{ route('general.thanks') }}" method="POST">
+                            @csrf
                             <div class="col-12 col-md-8">
                                 <div class="col-12">
-                                    <button class="mt-3 btn button-gold w-100"><b>FINALIZAR COMPRA<b /></button>
+                                    <input type="hidden" name="thanks" value="allowed">
+                                    <button type="submit" class="mt-3 btn button-gold w-100"><b>FINALIZAR COMPRA<b /></button>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
