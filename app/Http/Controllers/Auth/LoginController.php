@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function register(Request $request){
-       // dd("Pasa por aca");
        $request->validate([
            'name' => 'required|string|max:255',
            'surname' => 'required|string|max:255',
