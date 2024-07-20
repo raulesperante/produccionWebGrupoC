@@ -16,10 +16,10 @@
 
     <!-- Scripts -->
     @vite([
-        'resources/sass/app.scss',
-        'resources/css/admin/styles.css',
-        'resources/css/app.css',
-        'resources/js/app.js'
+    'resources/sass/app.scss',
+    'resources/css/admin/styles.css',
+    'resources/css/app.css',
+    'resources/js/app.js'
     ])
 
     @yield('resources')
@@ -32,9 +32,19 @@
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ route('home') }}">
-                    <!-- 
-                    <img class="logo" src="/img/tarea.png" alt="" />
-                    -->
+                    @if(Route::currentRouteName() === 'general.dashboard')
+                        <div style="font-size: 2rem">Dashboard</div>
+                    @elseif(Route::currentRouteName() === 'products.index')
+                        <div style="font-size: 2rem">Productos</div>
+                    @elseif(Route::currentRouteName() === 'products.create')
+                        <div style="font-size: 2rem">Agregar Producto</div>
+                    @elseif(Route::currentRouteName() === 'products.show')
+                        <div style="font-size: 2rem">Detalle Producto</div>
+                    @elseif(Route::currentRouteName() === 'products.edit')
+                        <div style="font-size: 2rem">Editar Producto</div>
+                    @else
+                        <div style="font-size: 2rem">&nbsp;</div>
+                    @endif
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
@@ -56,11 +66,15 @@
                                 <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="{{ route('products.index') }}">Productos</a>
+                                <a class="nav-link" aria-current="page"
+                                    href="{{ route('general.dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page"
+                                    href="{{ route('products.index') }}">Productos</a>
                             </li>
                             <li class="nav-item border-top">
-                                <a class="nav-link" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
