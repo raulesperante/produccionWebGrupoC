@@ -69,47 +69,43 @@
             <div class="row">
               <div class="col-4">
                 <label for="formprovincia" class="form-label">Provincia</label>
-                <input
-                  class="form-control"
-                  list="listprovincia"
-                  id="formprovincia"
-                  placeholder="Elegi tu Provincia..."
-                />
-                <datalist id="listprovincia">
-                  <option value="Buenos Aires"></option>
-                  <option value="CABA"></option>
-                  <option value="Catamarca"></option>
-                  <option value="Chaco"></option>
-                  <option value="Chubut"></option>
-                  <option value="Cordoba"></option>
-                  <option value="Corrientes"></option>
-                  <option value="Entre Rios"></option>
-                  <option value="Formosa"></option>
-                  <option value="Jujuy"></option>
-                  <option value="La Pampa"></option>
-                  <option value="La Rioja"></option>
-                  <option value="Mendoza"></option>
-                  <option value="Misiones"></option>
-                  <option value="Neuquen"></option>
-                  <option value="Rio Negro"></option>
-                  <option value="Salta"></option>
-                  <option value="San Juan"></option>
-                  <option value="San Luis"></option>
-                  <option value="Santa Cruz"></option>
-                  <option value="Santa Fe"></option>
-                  <option value="Santiago del Estero"></option>
-                  <option value="Tierra del Fuego"></option>
-                  <option value="Tucuman"></option>
-                  <option value="No soy de Argentina"></option>
-                </datalist>
+                <select class="form-select">
+                  <option>Tierra del Fuego</option>
+                  <option>Buenos Aires</value=>
+                  <option>CABA</option>
+                  <option>Catamarca</option>
+                  <option>Chaco</option>
+                  <option>Chubut</option>
+                  <option>Cordoba</option>
+                  <option>Corrientes</option>
+                  <option>Entre Rios</option>
+                  <option>Formosa</option>
+                  <option>Jujuy</option>
+                  <option>La Pampa</option>
+                  <option>La Rioja</option>
+                  <option>Mendoza</option>
+                  <option>Misiones</option>
+                  <option>Neuquen</option>
+                  <option>Rio Negro</option>
+                  <option>Salta</option>
+                  <option>San Juan</option>
+                  <option>San Luis</option>
+                  <option>Santa Cruz</option>
+                  <option>Santa Fe</option>
+                  <option>Santiago del Estero</option>
+                  <option>Tucuman</option>
+                  <option>No soy de Argentina</option>
+                </select>
               </div>
-              <div class="col-4 mb-4">
+              <div class="col-4">
                 <label for="formpais" class="form-label">Pais</label>
-                <input
-                  class="form-control"
-                  id="formpais"
-                  placeholder="Elegi tu Pais..."
-                />
+                <select class="form-select">
+                  <option>Argentina</option>
+                  <option>Paraguay</option>
+                  <option>Uruguay</option>
+                  <option>Chile</option>
+                  <option>Brasil</option>
+                </select>
               </div>
             </div>
             <div class="mb-4">
