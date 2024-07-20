@@ -33,24 +33,63 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     @if(Route::currentRouteName() === 'general.dashboard')
-                        <div style="font-size: 2rem">Dashboard</div>
+                    <div style="font-size: 2rem">Dashboard</div>
                     @elseif(Route::currentRouteName() === 'products.index')
-                        <div style="font-size: 2rem">Productos</div>
+                    <div style="font-size: 2rem">Productos</div>
                     @elseif(Route::currentRouteName() === 'products.create')
-                        <div style="font-size: 2rem">Agregar Producto</div>
+                    <div style="font-size: 2rem">Agregar Producto</div>
                     @elseif(Route::currentRouteName() === 'products.show')
-                        <div style="font-size: 2rem">Detalle Producto</div>
+                    <div style="font-size: 2rem">Detalle Producto</div>
                     @elseif(Route::currentRouteName() === 'products.edit')
-                        <div style="font-size: 2rem">Editar Producto</div>
+                    <div style="font-size: 2rem">Editar Producto</div>
                     @else
-                        <div style="font-size: 2rem">&nbsp;</div>
+                    <div style="font-size: 2rem">&nbsp;</div>
                     @endif
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div style="display: flex;">
+
+
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                    @if(!session("name"))
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page"
+                                            href="{{ route('login')}}">Ingresar</a>
+                                    </li>
+                                    @endif
+                                    @if(session("name"))
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle  colorUser " href="#" id="navbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Bienvenido, {{ session("name") }}
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="{{ route('logout')}}">Cerrar Sesión</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div>&nbsp;</div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+
+                </div>
+
                 <div class="offcanvas offcanvas-end bg-dark text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
                     aria-labelledby="offcanvasDarkNavbarLabel">
                     <div class="offcanvas-header">
