@@ -55,7 +55,7 @@
                                 <div class="col-11">
                                     <div class="input-group">
                                         <input type="number" name="amountItems" value="{{$productData['amount']}}"
-                                            class="form-control" aria-label="Cantidad">
+                                            class="form-control" aria-label="Cantidad"  min="1" step="1">
                                         <button type="submit" name="submit_action" value="modify"
                                             class="btn btn-success">Modificar</button>
                                     </div>
