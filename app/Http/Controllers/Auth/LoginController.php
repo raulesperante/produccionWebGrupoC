@@ -51,7 +51,9 @@ class LoginController extends Controller
             // Save name sesion
             session(["name" => $user->name]);
 
-            // Aquí se puede mandar al usuario a páginas privadas
+            if (Auth::user()->role_id == 1) {
+                return redirect()->intended(route("general.dashboard"));
+            }
             return redirect()->intended(route("home.index"));
         }
         return redirect()->route("login")->with('error', 'Credenciales no válidas');
