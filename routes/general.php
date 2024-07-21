@@ -9,4 +9,4 @@ Route::get("/dashboard", [GeneralViewController::class, "dashboard"])->middlewar
 
 Route::get('/mensajes', function () {
     return view('general.message');
-})->name('general.message');
+})->middleware(["auth", "is_admin"])->name('general.message');
