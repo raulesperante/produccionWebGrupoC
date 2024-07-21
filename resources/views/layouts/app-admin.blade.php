@@ -31,7 +31,7 @@
         <!-- Nav -->
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ route('home') }}">
+                <div class="text-white">
                     @if(Route::currentRouteName() === 'general.dashboard')
                     <div style="font-size: 2rem">Dashboard</div>
                     @elseif(Route::currentRouteName() === 'products.index')
@@ -47,10 +47,8 @@
                     @else
                     <div style="font-size: 2rem">&nbsp;</div>
                     @endif
-                </a>
+                </div>
                 <div style="display: flex;">
-
-
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                         <div class="container-fluid">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
