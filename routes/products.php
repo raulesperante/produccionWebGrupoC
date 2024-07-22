@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 
-Route::controller(ProductController::class)->group(function(){
+Route::middleware(["auth", "is_admin"])->controller(ProductController::class)->group(function(){
     Route::get('/productos',"index")->name('products.index');
     Route::get('/productos/crear',"create")->name('products.create');
     Route::post('/productos/crear',"store")->name('products.store');
