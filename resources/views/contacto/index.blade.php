@@ -33,43 +33,57 @@
             DEJANOS TU CONSULTA...!!!
           </h2>
 
-          <!--LOGIN-->
 
-          <form action="#">
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+          <form action="{{ route('contacto.store') }}" method="POST" >
+            @csrf
             <div class="mb-4">
-              <label for="correo" class="form-label">Correo Electronico</label>
+              <label for="email" class="form-label">Correo Electronico</label>
               <input
                 type="email"
                 class="form-control"
-                id="correo"
-                name="correo"
+                id="email"
+                name="email"
+                value="{{ old('email') }}"
                 required
               />
             </div>
             <div class="row">
               <div class="col-6">
-                <label for="apellido" class="form-label">Apellido</label>
+                <label for="surname" class="form-label">Apellido</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="apellido"
-                  name="apellido"
+                  id="surname"
+                  name="surname"
+                  value="{{ old('surname') }}"
+                  required
                 />
               </div>
               <div class="col-6">
-                <label for="nombre" class="form-label">Nombre</label>
+                <label for="name" class="form-label">Nombre</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="nombre"
-                  name="nombre"
+                  id="name"
+                  name="name"
+                  value="{{ old('name') }}"
+                  required
                 />
               </div>
             </div>
             <div class="row">
               <div class="col-4">
-                <label for="formprovincia" class="form-label">Provincia</label>
-                <select class="form-select">
+                <label for="province" class="form-label">Provincia</label>
+                <select required name="province" id="province" class="form-select">
                   <option>Tierra del Fuego</option>
                   <option>Buenos Aires</value=>
                   <option>CABA</option>
@@ -98,8 +112,8 @@
                 </select>
               </div>
               <div class="col-4">
-                <label for="formpais" class="form-label">Pais</label>
-                <select class="form-select">
+                <label for="country" class="form-label">Pais</label>
+                <select required name="country" id="country" class="form-select">
                   <option>Argentina</option>
                   <option>Paraguay</option>
                   <option>Uruguay</option>
@@ -109,8 +123,8 @@
               </div>
             </div>
             <div class="mb-4">
-              <label for="formtext" class="form-label">Mensaje</label>
-              <textarea class="form-control" id="formtext" rows="3"></textarea>
+              <label for="message" class="form-label">Mensaje</label>
+              <textarea required name="message" class="form-control" id="formtext" rows="3"></textarea>
             </div>
             <div class="col-12 mb-4">
               <div class="form-check">
