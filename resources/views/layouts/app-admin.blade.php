@@ -42,7 +42,7 @@
                     <div style="font-size: 2rem">Detalle Producto</div>
                     @elseif(Route::currentRouteName() === 'products.edit')
                     <div style="font-size: 2rem">Editar Producto</div>
-                    @elseif(Route::currentRouteName() === 'general.message')
+                    @elseif(Route::currentRouteName() === 'contacto.list')
                     <div style="font-size: 2rem">Mensajes</div>
                     @else
                     <div style="font-size: 2rem">&nbsp;</div>
@@ -114,7 +114,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page"
-                                    href="{{ route('general.message') }}">Mensajes</a>
+                                    href="{{ route('contacto.list') }}">Mensajes</a>
                             </li>
                             <li class="nav-item border-top">
                                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

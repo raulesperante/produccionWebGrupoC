@@ -15,12 +15,14 @@ class ContactoController extends Controller
         return view('contacto.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+
+    public function list()
     {
-        //
+
+        $messages = Message::paginate(2);
+        return view('general.message', [
+            'messages' => $messages
+        ]);
     }
 
     /**

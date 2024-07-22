@@ -75,3 +75,7 @@
     font-weight: bold;
     margin-bottom: 0;
 }
+
+.pagination span:hover{
+    color: white !important;
+}

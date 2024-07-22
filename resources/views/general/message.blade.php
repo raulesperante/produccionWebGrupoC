@@ -24,37 +24,31 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container" style="margin-top: -2em">
+    <div class="row justify-content-center mt-4">
+        @if ($messages->count() == 0)
+        <h1 class="text-center">No tienes mensajes</h1>
+        @else
+        @foreach ($messages as $message)
+        <div class="col-md-8 mt-4">
             <div class="card" style="border: 1px solid #a33d39">
-                <div style="background: rgb(124, 121, 121); color: black; font-weight: bold" class="card-header text-center">{{ __('ASUNTO') }}</div>
-                <div style="background: rgb(203, 209, 209); color: black; font-weight: bold" class="card-header text-center">{{ __('Realizan envío a la Quiaca?') }}</div>
+                <div style="background: rgb(124, 121, 121); color: black; font-weight: bold" class="card-header text-center">Mensaje N° {{$message->id}}</div>
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <p><b>De: example@example.com</b></p>
-                        <p>20/07/2024 20:50</p>
+                        <p><b>De: {{$message->email}}</b></p>
+                        <p>{{$message->created_at->format('d-m-Y H:i')}}</p>
                     </div>
-                    <p><b>Nombre Apellido</b> de <b>Provincia País</b> dice: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cumque assumenda repudiandae inventore. Placeat beatae perspiciatis aliquid nihil distinctio velit excepturi, animi esse quibusdam consequuntur ipsa debitis consectetur soluta cupiditate.</p>
+                    <p><b>{{$message->name}} {{$message->surname}}</b> de <b>{{$message->province}} {{$message->country}}</b> dice: {{$message->message}}</p>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
-    <div class="row justify-content-center mt-3">
-        <div class="col-md-8">
-            <div class="card" style="border: 1px solid #a33d39">
-                <div style="background: rgb(124, 121, 121); color: black; font-weight: bold" class="card-header text-center">{{ __('ASUNTO') }}</div>
-                <div style="background: rgb(203, 209, 209); color: black; font-weight: bold" class="card-header text-center">{{ __('Realizan envío a la Quiaca?') }}</div>
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <p><b>De: example@example.com</b></p>
-                        <p>20/07/2024 20:50</p>
-                    </div>
-                    <p><b>Nombre Apellido</b> de <b>Provincia País</b> dice: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cumque assumenda repudiandae inventore. Placeat beatae perspiciatis aliquid nihil distinctio velit excepturi, animi esse quibusdam consequuntur ipsa debitis consectetur soluta cupiditate.</p>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex justify-content-center mt-4">
+        {{ $messages->links() }}
     </div>
+    @endif
+
 </div>
 
 @endsection
