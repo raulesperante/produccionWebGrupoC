@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use App\Models\Invoice;
+use App\Models\InvoiceDetail;
 
 class CheckoutController extends Controller
 {
@@ -50,12 +52,32 @@ class CheckoutController extends Controller
     }
 
     //finalize purchase
-    public function finalizePurchase()
+    public function finalizePurchase(Request $request)
     {
+        $cart = session('cart', []);
+        $total = $this->calculateCostCart($cart);
+        $invoice = Invoice::create([
+            "name" => session("name"),
+            "surname" => session("surname"),
+            "shipping" => $request->shipping,
+            "payment_method" => $request->paymentMethod,
+            "total" => strval($total),
+        ]);
+        if (count($cart) > 0) {
+            foreach ($cart as $productId => $productData) {
+                InvoiceDetail::create([
+                    "invoice_id" => $invoice->id,
+                    "product_name" => $productData["name"],
+                    "amount" => $productData["amount"],
+                    "price" => $productData["price"],
+                ]);
+            }
+        }
         // Clear cart
         Session::put('cart', []);
         Session::put('total', 0);
         return view('general.thanks');
     }
+
 
 }
