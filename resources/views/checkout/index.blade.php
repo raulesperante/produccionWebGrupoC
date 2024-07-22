@@ -66,6 +66,8 @@
                 @endif
             </div>
             <div class="card-header bg-dark text-white">Completá tus datos</div>
+            <form  action="{{ route('finalizePurchase') }}" method="POST">
+            @csrf
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-sm-6">
@@ -128,8 +130,7 @@
                         </div>
                         <div class="row mt-2">
 
-                            <form  action="{{ route('finalizePurchase') }}" method="POST">
-                            @csrf
+
                             <div class="col-12 col-md-8">
                                 <div class="col-12">
                                     <input type="hidden" name="thanks" value="allowed">
