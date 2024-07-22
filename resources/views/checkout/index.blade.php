@@ -74,7 +74,7 @@
                                 <label for="" class="mb-1">Nombre</label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                                        aria-describedby="basic-addon1" value="Raúl" disabled>
+                                        aria-describedby="basic-addon1" value="{{session('name')}}" disabled>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6"></div>
@@ -82,7 +82,7 @@
                                 <label for="" class="mb-1">Apellido</label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                                        aria-describedby="basic-addon1" value="Esperante" disabled>
+                                        aria-describedby="basic-addon1" value="{{session('surname')}}" disabled>
                                 </div>
                             </div>
                         </div>

@@ -117,13 +117,7 @@
                                     href="{{ route('contacto.list') }}">Mensajes</a>
                             </li>
                             <li class="nav-item border-top">
-                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
+                                <a class="nav-link" href="{{ route('logout') }}">Logout</a>
                             </li>
                         </ul>
                     </div>

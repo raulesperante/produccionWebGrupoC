@@ -30,7 +30,10 @@ class LoginController extends Controller
        Auth::login($user);
 
        // Save name sesion
-       session(["name" => $request->name]);
+       session([
+        "name" => $request->name , 
+        "surname" => $request->surname
+        ]);
 
        return redirect(route("home.index"));
 
@@ -49,7 +52,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             $user = User::where('email', $request->email)->first();
             // Save name sesion
-            session(["name" => $user->name]);
+            session(["name" => $user->name, "surname" => $user->surname]);
 
             if (Auth::user()->role_id == 1) {
                 return redirect()->intended(route("general.dashboard"));
