@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 
+
 class CartController extends Controller
 {
     /**
@@ -15,23 +16,67 @@ class CartController extends Controller
         $cart = session('cart', []);
 
         return view('cart.index', [
-            'cart' => $cart
+            'cart' => $cart,
+            'total' => $this->calculateCostCart($cart)
         ]);
+    }
+
+    private function calculateCostCart($cart){
+        $total = 0;
+        foreach ($cart as $productId => $productData) {
+            $total += $productData['price'] * $productData['amount'];
+        }
+        $formatMoney = number_format($total, 2, ',', '.');
+        return $formatMoney;
+    }
+
+    private function hasStock($request, $product)
+    {
+        if ($request->amountItems > $product->amount) {
+            return false;
+        }
+        return true;
     }
 
     public function handleItem(Request $request)
     {
         $action = $request->input('submit_action');
+        $cart = session('cart', []);
+        $product = Product::find($request->id);
+        if (!$product) return redirect()->back();
 
-        // Ahora $action contiene el valor del botón presionado
-    
         if ($action === 'modify') {
-            dd($action);
-            // Lógica para la acción de modificar
+            if ($this->hasStock($request, $product)) {
+                $cart[$request->id]['amount'] = $request->amountItems;
+                $request->session()->put('cart', $cart);
+                return view('cart.index', [
+                    'cart' => $cart,
+                    'msg' => 'El producto ha sido modificado',
+                    'total' => $this->calculateCostCart($cart)
+                ]);
+            }
+            return view('cart.index', [
+                'cart' => $cart,
+                'productIdError' => $request->id,
+                'total' => $this->calculateCostCart($cart)
+            ]);
         } elseif ($action === 'delete') {
-            dd($action);
-            // Lógica para la acción de eliminar
-        } 
+            if (array_key_exists($product->id, $cart)) {
+                unset($cart[$product->id]);
+                $request->session()->put('cart', $cart);
+                return view('cart.index', [
+                    'cart' => $cart,
+                    'msg' => 'El producto ha sido eliminado',
+                    'total' => $this->calculateCostCart($cart)
+                ]);
+            }
+            return view('cart.index', [
+                'cart' => $cart,
+                'msgError' => 'El producto ha sido eliminado',
+                'total' => $this->calculateCostCart($cart)
+            ]);
+        }
+        return redirect()->back();
     }
 
 
@@ -50,13 +95,13 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $product = Product::find($request->id);
-        
-        if($product){
+
+        if ($product) {
             $cart = $request->session()->get('cart', []);
             $cart[$product->id] = [
-                'price' => $product->price,   
-                'name' => $product->name,   
-                'amount' => $product->amount,   
+                'price' => $product->price,
+                'name' => $product->name,
+                'amount' => 1,
             ];
             $request->session()->put('cart', $cart);
             return redirect(route('cart.index'));

@@ -19,4 +19,6 @@
 <div>Recordar configurar en el .env el nombre de la base de datos (a elección)</div>
 <div>Ejecutar las migraciones:</div>
 <div>php artisan migrate</div>
+<div>Ejemplo ejecutar seeder</div>
+<div>php artisan db:seed --class=Category</div>
 

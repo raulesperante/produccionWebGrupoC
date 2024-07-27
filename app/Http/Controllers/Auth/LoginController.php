@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function register(Request $request){
-       // dd("Pasa por aca");
        $request->validate([
            'name' => 'required|string|max:255',
            'surname' => 'required|string|max:255',
@@ -31,7 +30,10 @@ class LoginController extends Controller
        Auth::login($user);
 
        // Save name sesion
-       session(["name" => $request->name]);
+       session([
+        "name" => $request->name , 
+        "surname" => $request->surname
+        ]);
 
        return redirect(route("home.index"));
 
@@ -50,9 +52,11 @@ class LoginController extends Controller
             $request->session()->regenerate();
             $user = User::where('email', $request->email)->first();
             // Save name sesion
-            session(["name" => $user->name]);
+            session(["name" => $user->name, "surname" => $user->surname]);
 
-            // Aquí se puede mandar al usuario a páginas privadas
+            if (Auth::user()->role_id == 1) {
+                return redirect()->intended(route("general.dashboard"));
+            }
             return redirect()->intended(route("home.index"));
         }
         return redirect()->route("login")->with('error', 'Credenciales no válidas');

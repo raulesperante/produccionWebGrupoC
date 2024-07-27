@@ -5,8 +5,8 @@
 }
 
 .button-primary:hover{
-    background-color: #a33d39;
-    color: white;
+    background-color: #a33d39 !important;
+    color: white !important;
 }
 
 .no-list-style{
@@ -15,4 +15,67 @@
 
 .bg-black{
     background-color: black;
+}
+
+.shippingCost{
+    margin-top: 0.5em;
+    border: 2px solid green;
+    background-color: lightgreen;
+    text-align: center;
+    font-size: 2.2em;
+    color: darkgreen;
+    font-weight: 500;
+
+}
+
+.button-gold{
+    background-color:#afb62b;
+    color: brown;
+}
+
+.button-gold:hover{
+    background-color: #d3d84f !important;
+    color: brown !important;
+}
+
+.button-gold2{
+    background-color:#afb62b;
+    color: black;
+}
+
+.button-gold2:hover{
+    background-color: #d3d84f !important;
+    color: black !important;
+}
+
+.text-total{
+    color: black;
+    font-size: 1.5em;
+
+}
+
+#thanks-page h1{
+    color: green;
+    font-size: 2em;
+    font-weight: bold;
+}
+#thanks-page p{
+    color: green;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#no-authorized-page h1{
+    color: rgb(116, 25, 25);
+    font-size: 2em;
+    font-weight: bold;
+}
+#no-authorized-page p{
+    color: rgb(116, 25, 25);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.pagination span:hover{
+    color: white !important;
 }

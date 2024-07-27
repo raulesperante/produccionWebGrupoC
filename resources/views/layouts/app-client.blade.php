@@ -21,6 +21,7 @@
   'resources/css/bootstrap.css',
   'resources/css/galeriaSpirit.css',
   'resources/css/global.css',
+  'resources/css/app.css',
   ])
 
   @yield('resources')
@@ -86,10 +87,7 @@
             <a class="btn btn-yellow btn-lg" href="{{ route('cart.index') }}">Carrito</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-          <button class="btn btn-dark btn-lg" type="submit">Buscar</button>
-        </form>
+        <div style="width: 300px"></div>
       </div>
     </div>
   </nav>
