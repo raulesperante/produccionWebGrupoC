@@ -30,11 +30,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <!-- Aquí puedes agregar otros enlaces si es necesario -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        <!-- Enlaces de navegación adicionales -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('sobrenosotros.index') }}">Sobre Nosotros</a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -60,8 +64,6 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
-
                                 </div>
                             </li>
                         @endguest
