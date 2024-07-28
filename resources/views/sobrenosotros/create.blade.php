@@ -1,10 +1,6 @@
-@extends('layouts.app-client')
+@extends('layouts.app')
 
-@section('resources')
-@vite([
-'resources/css/inicio.css',
-])
-
+@section('content')
 <div class="container">
     <h1>Sobre Nosotros</h1>
     <p>Bienvenidos a nuestra sección Sobre Nosotros.</p>
