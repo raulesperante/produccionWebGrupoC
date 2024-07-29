@@ -12,21 +12,4 @@ class EmpresaInfoController extends Controller
         $empresaInfo = EmpresaInfo::all();
         return view('sobrenosotros.index', compact('empresaInfo'));
     }
-
-    /*public function create()
-    {
-        return view('sobrenosotros.create');
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ]);
-
-        EmpresaInfo::create($request->all());
-
-        return redirect()->route('sobrenosotros.index');
-    }*/
 }

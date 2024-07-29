@@ -19,8 +19,6 @@ Route::get('/spirit', [SpiritController::class, "index"])->name('spirit.index');
 Route::get('/flashback', [FlashbackController::class, "index"])->name('flashback.index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/sobrenosotros', [EmpresaInfoController::class, "index"])->name('sobrenosotros.index');
-//Route::get('/sobre/create', [EmpresaInfoController::class, 'create'])->name('sobre.create');
-//Route::post('/sobre', [EmpresaInfoController::class, 'store'])->name('sobre.store');
 
 
 
