@@ -84,7 +84,7 @@
             <a class="btn btn-dark btn-lg" href="{{ route('contacto.index') }}">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-dark btn-lg" href="{{ route('sobrenosotros.index') }}">Sobre Nosotros</a>
+            <a class="btn btn-info btn-lg" href="{{ route('sobrenosotros.index') }}">Sobre Nosotros</a>
           </li>
           <li class="nav-item">
             <a class="btn btn-yellow btn-lg" href="{{ route('cart.index') }}">Carrito</a>
