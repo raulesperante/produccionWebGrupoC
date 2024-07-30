@@ -48,7 +48,7 @@
         </div>
         <div class="mb-4">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" name="password" value="{{ old('password') }}" required />
+          <input type="password" class="form-control" id="password" name="password" value="{{ old('password') }}"  minlength="8" required />
         </div>
 
         <div >
