@@ -13,6 +13,11 @@
   <!-- Fonts -->
   <link rel="icon" href="/assets/images/logoprincipal.jpeg">
   <script src="https://kit.fontawesome.com/77693d89c5.js" crossorigin="anonymous"></script>
+  <style>
+    .tall-menu {
+      height: 65px;
+    }
+  </style>
 
 
 
@@ -72,22 +77,44 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav m-auto">
           <li class="nav-item">
-            <a class="btn btn-dark btn-lg" href="{{ route('home.index') }}">Home</a>
+            <a class="btn btn-dark btn-lg" href="{{ route('home.index') }}">
+              <div class="d-flex align-items-center tall-menu">Home</div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-success btn-lg" href="{{ route('flashback.index') }}">Street Flash Back</a>
+            <a class="btn btn-success btn-lg" href="{{ route('flashback.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Street Flash Back
+              </div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-danger btn-lg" href="{{ route('spirit.index') }}">Street Spirit</a>
+            <a class="btn btn-danger btn-lg" href="{{ route('spirit.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Street Flash Back
+              </div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-dark btn-lg" href="{{ route('contacto.index') }}">Contacto</a>
+            <a class="btn btn-dark btn-lg" href="{{ route('contacto.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Contacto
+              </div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-info btn-lg" href="{{ route('sobrenosotros.index') }}">Sobre Nosotros</a>
+            <a class="btn btn-info btn-lg" href="{{ route('sobrenosotros.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Sobre Nosotros
+              </div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-yellow btn-lg" href="{{ route('cart.index') }}">Carrito</a>
+            <a class="btn btn-yellow btn-lg" href="{{ route('cart.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Carrito
+              </div>
+            </a>
           </li>
         </ul>
         <div style="width: 300px"></div>
