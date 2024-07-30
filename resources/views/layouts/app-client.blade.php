@@ -103,7 +103,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-dark btn-lg" href="{{ route('sobrenosotros.index') }}">
+            <a class="btn btn-info btn-lg" href="{{ route('sobrenosotros.index') }}">
               <div class="d-flex align-items-center tall-menu">
                 Sobre Nosotros
               </div>
