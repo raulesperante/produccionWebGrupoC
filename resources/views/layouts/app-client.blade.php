@@ -57,6 +57,9 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="{{ route('logout')}}">Cerrar Sesión</a></li>
+              @if(session("role_id") == 1)
+              <li><a class="dropdown-item" href="{{ route('general.dashboard')}}">Dashboard</a></li>
+              @endif
             </ul>
           </li>
           @endif
