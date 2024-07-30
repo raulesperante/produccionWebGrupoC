@@ -94,7 +94,7 @@
           <li class="nav-item">
             <a class="btn btn-danger btn-lg" href="{{ route('spirit.index') }}">
               <div class="d-flex align-items-center tall-menu">
-                Street Flash Back
+                Street Spirit
               </div>
             </a>
           </li>
