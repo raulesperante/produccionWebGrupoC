@@ -69,7 +69,7 @@
   </nav>
   <nav class="navbar navbar-expand-lg bg-sucess mt-4">
     <div class="container-fluid">
-      <a class="navbar-brand p-2 m-1" href="inicio.html">
+      <a class="navbar-brand p-2 m-1" href="{{ route('home.index') }}">
         <img src="/assets/images/logoprincipal.jpeg" alt="marca" width="250" height="100" class="img-fluid" />
       </a>
       <button class="navbar-toggler btn btn-dark" type="button" data-bs-toggle="collapse"
