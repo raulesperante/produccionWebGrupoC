@@ -57,6 +57,9 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="{{ route('logout')}}">Cerrar Sesión</a></li>
+              @if(session("role_id") == 1)
+              <li><a class="dropdown-item" href="{{ route('general.dashboard')}}">Dashboard</a></li>
+              @endif
             </ul>
           </li>
           @endif
@@ -66,7 +69,7 @@
   </nav>
   <nav class="navbar navbar-expand-lg bg-sucess mt-4">
     <div class="container-fluid">
-      <a class="navbar-brand p-2 m-1" href="inicio.html">
+      <a class="navbar-brand p-2 m-1" href="{{ route('home.index') }}">
         <img src="/assets/images/logoprincipal.jpeg" alt="marca" width="250" height="100" class="img-fluid" />
       </a>
       <button class="navbar-toggler btn btn-dark" type="button" data-bs-toggle="collapse"

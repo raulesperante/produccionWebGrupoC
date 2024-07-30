@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Invoice;
+use App\Models\Product;
 use App\Models\InvoiceDetail;
 
 class CheckoutController extends Controller
@@ -71,6 +72,12 @@ class CheckoutController extends Controller
                     "amount" => $productData["amount"],
                     "price" => $productData["price"],
                 ]);
+                // Descontar el amount del producto
+                $product = Product::find($productId);
+                if ($product) {
+                    $product->amount = $product->amount - $productData["amount"];
+                    $product->save();
+                }
             }
         }
         // Clear cart
@@ -78,6 +85,4 @@ class CheckoutController extends Controller
         Session::put('total', 0);
         return view('general.thanks');
     }
-
-
 }
