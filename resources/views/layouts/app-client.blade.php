@@ -13,6 +13,11 @@
   <!-- Fonts -->
   <link rel="icon" href="/assets/images/logoprincipal.jpeg">
   <script src="https://kit.fontawesome.com/77693d89c5.js" crossorigin="anonymous"></script>
+  <style>
+    .tall-menu {
+      height: 65px;
+    }
+  </style>
 
 
 
@@ -52,6 +57,9 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="{{ route('logout')}}">Cerrar Sesión</a></li>
+              @if(session("role_id") == 1)
+              <li><a class="dropdown-item" href="{{ route('general.dashboard')}}">Dashboard</a></li>
+              @endif
             </ul>
           </li>
           @endif
@@ -61,7 +69,7 @@
   </nav>
   <nav class="navbar navbar-expand-lg bg-sucess mt-4">
     <div class="container-fluid">
-      <a class="navbar-brand p-2 m-1" href="inicio.html">
+      <a class="navbar-brand p-2 m-1" href="{{ route('home.index') }}">
         <img src="/assets/images/logoprincipal.jpeg" alt="marca" width="250" height="100" class="img-fluid" />
       </a>
       <button class="navbar-toggler btn btn-dark" type="button" data-bs-toggle="collapse"
@@ -72,22 +80,44 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav m-auto">
           <li class="nav-item">
-            <a class="btn btn-dark btn-lg" href="{{ route('home.index') }}">Home</a>
+            <a class="btn btn-dark btn-lg" href="{{ route('home.index') }}">
+              <div class="d-flex align-items-center tall-menu">Home</div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-success btn-lg" href="{{ route('flashback.index') }}">Street Flash Back</a>
+            <a class="btn btn-success btn-lg" href="{{ route('flashback.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Street Flash Back
+              </div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-danger btn-lg" href="{{ route('spirit.index') }}">Street Spirit</a>
+            <a class="btn btn-danger btn-lg" href="{{ route('spirit.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Street Flash Back
+              </div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-dark btn-lg" href="{{ route('contacto.index') }}">Contacto</a>
+            <a class="btn btn-dark btn-lg" href="{{ route('contacto.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Contacto
+              </div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-info btn-lg" href="{{ route('sobrenosotros.index') }}">Sobre Nosotros</a>
+            <a class="btn btn-info btn-lg" href="{{ route('sobrenosotros.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Sobre Nosotros
+              </div>
+            </a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-yellow btn-lg" href="{{ route('cart.index') }}">Carrito</a>
+            <a class="btn btn-yellow btn-lg" href="{{ route('cart.index') }}">
+              <div class="d-flex align-items-center tall-menu">
+                Carrito
+              </div>
+            </a>
           </li>
         </ul>
         <div style="width: 300px"></div>

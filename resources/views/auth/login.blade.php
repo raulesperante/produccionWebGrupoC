@@ -52,7 +52,7 @@
         </div>
         <div class="mb-4">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" name="password" required />
+          <input type="password" class="form-control" id="password" name="password" minlength="8" required />
         </div>
         <div class="d-grid" id="ini">
           <button type="submit" class="btn btn-dark">Iniciar Sesión</button>
