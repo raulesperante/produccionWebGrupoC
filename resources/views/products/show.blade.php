@@ -24,7 +24,7 @@
                     <div class="card-footer" style="background: #21b1ca">
                         <a href="{{ route('products.index') }}" class="btn button-primary"> Volver a productos </a>
                         <a href="{{ route('products.edit', $product) }}" class="btn btn-success"> Editar </a>
-                        <form action="{{ route('products.destroy', $product) }}" method="POST" class="d-inline">
+                        <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
                             <button id="delete_record" type="submit" class="btn btn-danger"> Eliminar </button>

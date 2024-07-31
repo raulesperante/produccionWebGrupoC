@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('category')->where('is_visible', true)->paginate(10);
+        $products = Product::with('category')->where('is_visible', 1)->paginate(10);
 
 
         return view('products.index', [
@@ -138,9 +138,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->update([
-            'is_visible' => false
-        ]);
+        $product->delete();
         return redirect()
             ->route('products.index')
             ->with('status', 'El producto se ha eliminado correctamente');

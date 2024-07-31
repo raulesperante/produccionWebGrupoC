@@ -10,5 +10,5 @@ Route::middleware(["auth", "is_admin"])->controller(ProductController::class)->g
     Route::get('/productos/{product}',"show")->name('products.show');
     Route::get('/productos/editar/{product}',"edit")->name('products.edit');
     Route::post('/productos/actualizar/{product}',"update")->name('products.update');
-    Route::get('/productos/eliminar',"destroy")->name('products.destroy');
+    Route::delete('/productos/eliminar/{product}',"destroy")->name('products.destroy');
 });
